@@ -3,7 +3,7 @@
 prettypublisher
 ===============
 
-[![Build Status](https://travis-ci.org/seabbs/PublishPretty.svg?branch=master)](https://travis-ci.org/seabbs/PublishPretty) [![codecov](https://codecov.io/gh/seabbs/PublishPretty/branch/master/graph/badge.svg)](https://codecov.io/gh/seabbs/PublishPretty)
+[![Build Status](https://travis-ci.org/seabbs/prettypublisher.svg?branch=master)](https://travis-ci.org/seabbs/prettypublisher) [![codecov](https://codecov.io/gh/seabbs/prettypublisher/branch/master/graph/badge.svg)](https://codecov.io/gh/seabbs/prettypublisher)
 
 prettypublisher is an R package that aims to improve your workflow by allowing an easier transition from literate code to a paper draft ready for journal submission.
 
