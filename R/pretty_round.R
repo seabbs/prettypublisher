@@ -13,12 +13,12 @@
 #' pretty_round(2.1, digits = 1)
 #' pretty_round(2.1, digits = 2)
 #' pretty_round(c(2.13, 2.1, 4.165, 8.2323242, 1), digits = 2)
-pretty_round = function(num, digits = 2, ...) {
+pretty_round <- function(num, digits = 2, ...) {
   num <- num %>%
     round(digits) %>%
     format(nsmall = digits, ...)
   num[] <- num %>%
-    str_trim(side = 'both')
+    str_trim(side = "both")
 
   return(num)
 }

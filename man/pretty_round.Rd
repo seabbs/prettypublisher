@@ -2,7 +2,7 @@
 % Please edit documentation in R/pretty_round.R
 \name{pretty_round}
 \alias{pretty_round}
-\title{Round and format numbers; standardising trailing zeros}
+\title{Round and format numeric vectors; standardising trailing zeros}
 \usage{
 pretty_round(num, digits = 2, ...)
 }
@@ -14,10 +14,10 @@ pretty_round(num, digits = 2, ...)
 \item{...}{Pass additional arguements to \code{\link[base]{format}}.}
 }
 \value{
-A rounded number formatted as a character with trialing zeros.
+A rounded numeric vector formatted as a character vector with trialing zeros.
 }
 \description{
-Round and format numbers; standardising trailing zeros
+Round and format numeric vectors; standardising trailing zeros
 }
 \examples{
 pretty_round(2.1, digits = 1)
