@@ -1,7 +1,7 @@
 PackratFormat: 1.4
 PackratVersion: 0.4.8.1
 RVersion: 3.4.0
-Repos: CRAN=https://www.stats.bris.ac.uk/R/
+Repos: CRAN=https://cran.rstudio.com/
 
 Package: BH
 Source: CRAN
@@ -27,10 +27,26 @@ Source: CRAN
 Version: 1.1.0
 Hash: 3f754426ca2b7dbbf63951fe5075373b
 
+Package: base64enc
+Source: CRAN
+Version: 0.1-3
+Hash: c590d29e555926af053055e23ee79efb
+
+Package: bitops
+Source: CRAN
+Version: 1.0-6
+Hash: 67d0775189fd0041d95abca618c5c07e
+
 Package: brew
 Source: CRAN
 Version: 1.0-6
 Hash: 931f9972deae0f205e1c78a51f33149b
+
+Package: caTools
+Source: CRAN
+Version: 1.17.1
+Requires: bitops
+Hash: 97cb6f6293cd18d17df77a6383cc6763
 
 Package: commonmark
 Source: CRAN
@@ -42,65 +58,60 @@ Source: CRAN
 Version: 1.3.2
 Hash: 576a9d297a567d6a5ebd164ca5221590
 
-Package: curl
-Source: CRAN
-Version: 2.6
-Hash: 8162b82ca4809c0d63c30aedbd7348e0
-
 Package: desc
 Source: CRAN
 Version: 1.1.0
 Requires: R6, assertthat, crayon, rprojroot
 Hash: 346d3477f87b89692dd1379eaed1a1be
 
-Package: devtools
-Source: CRAN
-Version: 1.13.1
-Requires: digest, git2r, httr, jsonlite, memoise, rstudioapi, whisker,
-    withr
-Hash: 8dadb6c6a916c8312dddc7b4d394c9f3
-
 Package: digest
 Source: CRAN
 Version: 0.6.12
 Hash: e53fb8c58673df868183697e39a6a4d6
 
-Package: git2r
+Package: evaluate
 Source: CRAN
-Version: 0.18.0
-Hash: 9dfaafbcca68be29b89ef7783dc1dac0
+Version: 0.10
+Requires: stringr
+Hash: c3601a10c987d439e0c63ec635234a76
 
-Package: httr
+Package: highr
 Source: CRAN
-Version: 1.2.1
-Requires: R6, curl, jsonlite, mime, openssl
-Hash: 7de1f8f760441881804af7c1ff324340
+Version: 0.6
+Hash: aa3d5b7912b5fed4b546ed5cd2a1760b
+
+Package: htmltools
+Source: CRAN
+Version: 0.3.6
+Requires: Rcpp, digest
+Hash: eeba9fb36d4cb6cc66f060187102be41
 
 Package: jsonlite
 Source: CRAN
 Version: 1.4
 Hash: 24cc0ffeb1771d710173d9803a131870
 
+Package: knitr
+Source: CRAN
+Version: 1.16
+Requires: digest, evaluate, highr, markdown, stringr, yaml
+Hash: 3b8dc00d51027c6d041d56bc92136452
+
 Package: magrittr
 Source: CRAN
 Version: 1.5
 Hash: bdc4d48c3135e8f3b399536ddf160df4
 
-Package: memoise
+Package: markdown
 Source: CRAN
-Version: 1.1.0
-Requires: digest
-Hash: 410fcd334bc626db100237cc1370f2e9
+Version: 0.8
+Requires: mime
+Hash: 045d7c594d503b41f1c28946d076c8aa
 
 Package: mime
 Source: CRAN
 Version: 0.5
 Hash: 463550cf44fb6f0a2359368f42eebe62
-
-Package: openssl
-Source: CRAN
-Version: 0.9.6
-Hash: 5f4711e142a44655dfea4d64fcf2f641
 
 Package: packrat
 Source: CRAN
@@ -111,6 +122,13 @@ Package: praise
 Source: CRAN
 Version: 1.0.0
 Hash: 77da8f1df873a4b91e5c4a68fe2fb1b6
+
+Package: rmarkdown
+Source: CRAN
+Version: 1.5
+Requires: base64enc, caTools, evaluate, htmltools, jsonlite, knitr,
+    rprojroot, yaml
+Hash: b37fc27c2604de97b4981eeae7a00879
 
 Package: roxygen2
 Source: CRAN
@@ -124,11 +142,6 @@ Source: CRAN
 Version: 1.2
 Requires: backports
 Hash: fdcac51a7f47decd60556ceefc3c26b1
-
-Package: rstudioapi
-Source: CRAN
-Version: 0.6
-Hash: fd256f8bfb9a64cc35f98b0decb1a79f
 
 Package: stringi
 Source: CRAN
@@ -147,18 +160,13 @@ Version: 1.0.2
 Requires: R6, crayon, digest, magrittr, praise
 Hash: 88d5291104227f9dc2e7c7c1d0eb6c74
 
-Package: whisker
-Source: CRAN
-Version: 0.3-2
-Hash: 803d662762e532705c2c066a82d066e7
-
-Package: withr
-Source: CRAN
-Version: 1.0.2
-Hash: 774eb7be9087cdc24b53b74e5359cfac
-
 Package: xml2
 Source: CRAN
 Version: 1.1.1
 Requires: BH, Rcpp
 Hash: 35dbee121bb8d76347677290ba1c6a06
+
+Package: yaml
+Source: CRAN
+Version: 2.1.14
+Hash: c81230c3a7d9ba20607ad6b4331173d1

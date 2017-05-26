@@ -21,7 +21,8 @@
 #'
 #' ## Return a proportion
 #' pretty_percentage(c(1, 2, 4, 5, 2), c(100, 40, 50, 40, 30), as_per = FALSE)
-pretty_percentage <- function(num, denom, digits = 2, percent_scaling = 100, as_per = TRUE, ...) {
+pretty_percentage <- function(num, denom, digits = 2,
+                              percent_scaling = 100, as_per = TRUE, ...) {
   per <- pretty_round(num / denom * percent_scaling, digits, ...)
 
   if (as_per) {
