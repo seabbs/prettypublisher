@@ -1,0 +1,12 @@
+Package: prettypublisher
+Type: Package
+Title: Formatting Function For Publishable R Markdown Documents
+Version: 0.1.1.9000
+Author: Sam Abbott
+Maintainer: Sam Abbott <contact@samabbott.co.uk>
+Description: Provides a variety of general purpose functions that help in formatting R markdown documents ready for publication. Specifically focussed on improving the appearance of word documents, although all functions should also work for both pdf, and html. 
+License: GPL-3 | file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: testthat
+RoxygenNote: 6.0.1
