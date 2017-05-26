@@ -9,12 +9,12 @@ pretty_round(num, digits = 2, ...)
 \arguments{
 \item{num}{A numeric vector.}
 
-\item{digits}{Integer indicating the number of decimal places to be used}
+\item{digits}{Integer indicating the number of decimal places to be used.}
 
-\item{...}{Pass additional arguements to \code{\link[base]{format}}}
+\item{...}{Pass additional arguements to \code{\link[base]{format}}.}
 }
 \value{
-A rounded number formatted as a character with trialing zeros
+A rounded number formatted as a character with trialing zeros.
 }
 \description{
 Round and format numbers; standardising trailing zeros
@@ -23,4 +23,7 @@ Round and format numbers; standardising trailing zeros
 pretty_round(2.1, digits = 1)
 pretty_round(2.1, digits = 2)
 pretty_round(c(2.13, 2.1, 4.165, 8.2323242, 1), digits = 2)
+}
+\seealso{
+\code{\link[base]{format}}, and \code{\link[base]{round}} for additional information
 }

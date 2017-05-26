@@ -1,12 +1,14 @@
 
-#' Round and format numbers; standardising trailing zeros
+#' Round and format numeric vectors; standardising trailing zeros
 #'
 #' @param num A numeric vector.
-#' @param digits Integer indicating the number of decimal places to be used
-#' @param ... Pass additional arguements to \code{\link[base]{format}}
-#' @return A rounded number formatted as a character with trialing zeros
+#' @param digits Integer indicating the number of decimal places to be used.
+#' @param ... Pass additional arguements to \code{\link[base]{format}}.
+#' @return A rounded numeric vector formatted as a character vector with trialing zeros.
 #' @export
-#'
+#' @importFrom stringr str_trim
+#' @import magrittr
+#' @seealso \code{\link[base]{format}}, and \code{\link[base]{round}} for additional information
 #' @examples
 #' pretty_round(2.1, digits = 1)
 #' pretty_round(2.1, digits = 2)
