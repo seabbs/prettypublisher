@@ -4,6 +4,10 @@ test_that("pretty_percentage produces a publishable percentage", {
   expect_equal("35% (35/100)", pretty_percentage(35, 100, digits = 0))
 })
 
+test_that("pretty_percentage produces a publishable proportion", {
+  expect_equal("0.05 (23/457)", pretty_percentage(23, 457, digits = 2, percent_scaling = 1, as_per = FALSE))
+})
+
 test_that("pretty_percentage can cope with a single denominator, and multiple numerators", {
     num_vector <- c(100, 10, 45, 1000, 45, 201, 34, 16)
     denom_vector <- c(1000)
