@@ -41,7 +41,37 @@ test_that('pretty table produces a table with no label or caption set', {
                   "|          5.1|         3.5|",
                   "|          4.9|         3.0|")
 
-  expect_equal(expect_out, as.character(pretty_table(df, tab_fun = kable, cap_fun = paste0)))
+  expect_equal(expect_out,
+               as.character(pretty_table(df,
+                                         tab_fun = kable,
+                                         cap_fun = paste0)))
+})
+
+test_that('pretty table produces a table with no label set', {
+  df <- iris[1:2, 1:2]
+  expect_out <- c("| Sepal.Length| Sepal.Width|",
+                  "|------------:|-----------:|",
+                  "|          5.1|         3.5|",
+                  "|          4.9|         3.0|")
+
+  expect_equal(expect_out,
+               as.character(pretty_table(df,
+                                         tab_fun = kable,
+                                         caption = '',
+                                         cap_fun = paste0)))
 })
 
 
+test_that('pretty table produces a table with no caption set', {
+  df <- iris[1:2, 1:2]
+  expect_out <- c("| Sepal.Length| Sepal.Width|",
+                  "|------------:|-----------:|",
+                  "|          5.1|         3.5|",
+                  "|          4.9|         3.0|")
+
+  expect_equal(expect_out,
+               as.character(pretty_table(df,
+                                         tab_fun = kable,
+                                         label = '',
+                                         cap_fun = paste0)))
+})
