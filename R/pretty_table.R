@@ -34,22 +34,25 @@
 #' library(knitr)
 #'
 #' pretty_table(iris[1:5, 1:5], tab_fun = kable)
-pretty_table = function(df, col_names = NULL, footer = NULL, cap_fun = NULL,
+pretty_table <- function(df, col_names = NULL, footer = NULL, cap_fun = NULL,
                         label = NULL, caption = NULL, tab_fun = pander, ...) {
 
   if (is.null(tab_fun)) {
-    stop('Requires a table function to be set')
+    stop("Requires a table function to be set")
   }
-  ## Add footer - requires editing in word post knitting]
+
   if (!is.null(footer)) {
 
     # get column name for footer location
     store_col_name <- colnames(df)[1]
-    colnames(df)[1] <- 'footer_loc'
+    colnames(df)[1] <- "footer_loc"
 
     table <- df %>%
       add_row(footer_loc = footer) %>%
-      map(function(x) { ifelse(is.na(x), '', x) }) %>%
+      map(function(x) {
+        ifelse(is.na(x), "", x)
+        }
+        ) %>%
       bind_cols
 
     colnames(table)[1] <- store_col_name
@@ -65,17 +68,17 @@ pretty_table = function(df, col_names = NULL, footer = NULL, cap_fun = NULL,
 
 
   if (is.null(cap_fun)) {
-    cap <- ''
+    cap <- ""
   }else {
     ## Add dummy arguements for label and caption if not supplied
     if (is.null(label) && is.null(caption)) {
-      cap <- ''
+      cap <- ""
     }else {
       if (is.null(label)) {
-        label <- ''
+        label <- ""
       }
       if (is.null(caption)) {
-        caption <- ''
+        caption <- ""
       }
       cap <- cap_fun(label, caption)
     }
@@ -84,4 +87,3 @@ pretty_table = function(df, col_names = NULL, footer = NULL, cap_fun = NULL,
   ## Add label and caption and make table
   tab_fun(table %>% as.data.frame, caption = cap, ...)
 }
-
