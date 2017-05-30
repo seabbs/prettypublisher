@@ -35,8 +35,11 @@ pretty_ci <- function(est, lci, uci, sep = ' to ', digits = 2) {
   df <- data_frame(est, lci, uci)
 
   df <- df %>%
-          mutate_all(funs(pretty_round(as.numeric(.), digits = digits))) %>%
-            mutate(ci = paste0(est, ' (', lci, sep, uci, ')'))
+          mutate_all(funs(as.numeric)) %>%
+            mutate(est = pretty_round(est, digits = digits),
+                   lci = pretty_round(lci, digits = digits),
+                   uci = pretty_round(uci, digits = digits)) %>%
+              mutate(ci = paste0(est, ' (', lci, sep, uci, ')'))
 
   return(df$ci)
 }
