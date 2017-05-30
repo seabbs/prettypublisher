@@ -7,7 +7,9 @@
 #' @param uci A numeric or character vector of upper confidence/credible intervals.
 #' @param sep A character vector indicating the seperator used between the upper and
 #' lower confidence/credible intervals. The default is ' to '.
+#' @param inline Logical operator indicating whether an explanatory note is required.
 #' @inheritParams pretty_round
+#' @inheritParams pretty_inline_ci
 #' @return The estimate with formated upper, and lower confidence/credible
 #' intervals as a character vector.
 #' @export
@@ -31,7 +33,7 @@
 #' x <- data_frame(est = c(0,1), lci = c(0, 2), uci = c(1, 4))
 #' x <- x %>% mutate(ci = est %>% pretty_ci(lci = lci, uci = uci, sep = ' by ', digits = 0))
 #'
-pretty_ci <- function(est, lci, uci, sep = " to ", digits = 2) {
+pretty_ci <- function(est, lci, uci, sep = " to ", digits = 2, inline = FALSE, note = "95% CI") {
 
   df <- data_frame(est, lci, uci)
 
@@ -44,6 +46,12 @@ pretty_ci <- function(est, lci, uci, sep = " to ", digits = 2) {
                    lci = pretty_round(lci, digits = digits),
                    uci = pretty_round(uci, digits = digits)) %>%
               mutate(ci = paste0(est, " (", lci, sep, uci, ")"))
+
+  if (inline) {
+    df <- df %>%
+            mutate(ci = pretty_inline_ci(ci, note = note))
+  }
+
 
   return(df$ci)
 }

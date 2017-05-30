@@ -81,25 +81,26 @@
 
     
     <p>Take numeric/character vectors of the estimate, and upper/lower confidence/credible
-intervals, round with trailing zeros and format into the required journal style</p>
+intervals, round with trailing zeros and format into the required journal style.</p>
     
 
-    <pre class="usage"><span class='fu'>pretty_ci</span>(<span class='no'>est</span>, <span class='no'>lci</span>, <span class='no'>uci</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>" to "</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>)</pre>
+    <pre class="usage"><span class='fu'>pretty_ci</span>(<span class='no'>est</span>, <span class='no'>lci</span>, <span class='no'>uci</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>" to "</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>note</span> <span class='kw'>=</span> <span class='st'>"95% CI"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>est</th>
-      <td><p>A numeric or character vector of estimates</p></td>
+      <td><p>A numeric or character vector of estimates.</p></td>
     </tr>
     <tr>
       <th>lci</th>
-      <td><p>A numeric or character vector of lower confidence/credible intervals</p></td>
+      <td><p>A numeric or character vector of lower confidence/credible intervals.</p></td>
     </tr>
     <tr>
       <th>uci</th>
-      <td><p>A numeric or character vector of upper confidence/credible intervals</p></td>
+      <td><p>A numeric or character vector of upper confidence/credible intervals.</p></td>
     </tr>
     <tr>
       <th>sep</th>
@@ -110,11 +111,20 @@ lower confidence/credible intervals. The default is ' to '.</p></td>
       <th>digits</th>
       <td><p>Integer indicating the number of decimal places to be used.</p></td>
     </tr>
+    <tr>
+      <th>inline</th>
+      <td><p>Logical operator indicating whether an explanatory note is required.</p></td>
+    </tr>
+    <tr>
+      <th>note</th>
+      <td><p>A character vector indicating the explanatory note to be used.</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The estimate with formated upper, and lower confidence/credible intervals as a character vector</p>
+    <p>The estimate with formated upper, and lower confidence/credible
+intervals as a character vector.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 

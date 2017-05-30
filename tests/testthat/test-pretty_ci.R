@@ -10,6 +10,12 @@ test_that("pretty_ci can handle character input", {
                pretty_ci("2", lci = "1", uci = "3", digits = 2, sep = " to "))
 })
 
+test_that("pretty_ci can return a ci with an explantory note", {
+  expect_equal("2.00 (95% CI 1.00 to 3.00)",
+               pretty_ci("2", lci = "1", uci = "3", digits = 2,
+                         sep = " to ", inline = TRUE, note = "95% CI "))
+})
+
 test_that("pretty_ci can handle a vector of inputs", {
   expect_equal(c("0.0 (-123.0-10.0)",
                  "1.0 (-0.2-2.0)",

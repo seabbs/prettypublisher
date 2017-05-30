@@ -4,7 +4,8 @@
 \alias{pretty_ci}
 \title{Format an estimate, lower and upper confidence intervals into a single character string}
 \usage{
-pretty_ci(est, lci, uci, sep = " to ", digits = 2)
+pretty_ci(est, lci, uci, sep = " to ", digits = 2, inline = FALSE,
+  note = "95\% CI")
 }
 \arguments{
 \item{est}{A numeric or character vector of estimates.}
@@ -17,6 +18,10 @@ pretty_ci(est, lci, uci, sep = " to ", digits = 2)
 lower confidence/credible intervals. The default is ' to '.}
 
 \item{digits}{Integer indicating the number of decimal places to be used.}
+
+\item{inline}{Logical operator indicating whether an explanatory note is required.}
+
+\item{note}{A character vector indicating the explanatory note to be used.}
 }
 \value{
 The estimate with formated upper, and lower confidence/credible
