@@ -29,3 +29,19 @@ test_that('pretty table changes column names', {
                                          col_names = as.character(1:2),
                                          tab_fun = kable)))
 })
+
+test_that('pretty table requires a table function to wrap', {
+  expect_error(pretty_table(iris, tab_fun = NULL))
+})
+
+test_that('pretty table produces a table with no label or caption set', {
+  df <- iris[1:2, 1:2]
+  expect_out <- c("| Sepal.Length| Sepal.Width|",
+                  "|------------:|-----------:|",
+                  "|          5.1|         3.5|",
+                  "|          4.9|         3.0|")
+
+  expect_equal(expect_out, as.character(pretty_table(df, tab_fun = kable, cap_fun = paste0)))
+})
+
+

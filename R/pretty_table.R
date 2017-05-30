@@ -64,7 +64,7 @@ pretty_table = function(df, col_names = NULL, footer = NULL, cap_fun = NULL,
   }
 
 
-  if (!is.null(cap_fun)) {
+  if (is.null(cap_fun)) {
     cap <- ''
   }else {
     ## Add dummy arguements for label and caption if not supplied
