@@ -1,6 +1,6 @@
 Package: prettypublisher
 Type: Package
-Version: 0.1.2.9000
+Version: 0.2.1.9000
 Title: Formatting Functions For Publishable R Markdown Documents
 Authors@R: c(person("Sam Abbott", "Developer", role = c("aut", "cre"),
                      email = "contact@samabbott.co.uk"))
@@ -10,9 +10,11 @@ Description: Provides a variety of general purpose functions that help in format
 License: GPL-3 | file LICENSE
 Imports: magrittr,
     stringr,
-    dplyr
-Suggests: testthat,
+    dplyr,
+    pander,
     knitr,
+    purrr
+Suggests: testthat,
     rmarkdown
 VignetteBuilder: knitr
 URL: http://www.samabbott.co.uk/prettypublisher, 
