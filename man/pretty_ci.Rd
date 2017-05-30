@@ -7,11 +7,11 @@
 pretty_ci(est, lci, uci, sep = " to ", digits = 2)
 }
 \arguments{
-\item{est}{A numeric or character vector of estimates}
+\item{est}{A numeric or character vector of estimates.}
 
-\item{lci}{A numeric or character vector of lower confidence/credible intervals}
+\item{lci}{A numeric or character vector of lower confidence/credible intervals.}
 
-\item{uci}{A numeric or character vector of upper confidence/credible intervals}
+\item{uci}{A numeric or character vector of upper confidence/credible intervals.}
 
 \item{sep}{A character vector indicating the seperator used between the upper and
 lower confidence/credible intervals. The default is ' to '.}
@@ -19,11 +19,12 @@ lower confidence/credible intervals. The default is ' to '.}
 \item{digits}{Integer indicating the number of decimal places to be used.}
 }
 \value{
-The estimate with formated upper, and lower confidence/credible intervals as a character vector
+The estimate with formated upper, and lower confidence/credible
+intervals as a character vector.
 }
 \description{
 Take numeric/character vectors of the estimate, and upper/lower confidence/credible
-intervals, round with trailing zeros and format into the required journal style
+intervals, round with trailing zeros and format into the required journal style.
 }
 \examples{
 ## Formating a single confidence interval

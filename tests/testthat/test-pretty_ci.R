@@ -1,11 +1,13 @@
 context("pretty_ci")
 
 test_that("pretty_ci produces a publishable ci", {
-  expect_equal("2.00 (1.00 to 3.00)", pretty_ci(2, lci = 1, uci = 3, digits = 2, sep = ' to '))
+  expect_equal("2.00 (1.00 to 3.00)",
+               pretty_ci(2, lci = 1, uci = 3, digits = 2, sep = " to "))
 })
 
 test_that("pretty_ci can handle character input", {
-  expect_equal("2.00 (1.00 to 3.00)", pretty_ci('2', lci = '1', uci = '3', digits = 2, sep = ' to '))
+  expect_equal("2.00 (1.00 to 3.00)",
+               pretty_ci("2", lci = "1", uci = "3", digits = 2, sep = " to "))
 })
 
 test_that("pretty_ci can handle a vector of inputs", {
@@ -18,7 +20,7 @@ test_that("pretty_ci can handle a vector of inputs", {
                pretty_ci(est = c(0, 1, 100, 300, 21221, 403),
                          lci = c(-123, -0.2, 50, 100, 12321, 200),
                          uci = c(10, 2, 200, 400, 30122, 500),
-                         sep = '-',
+                         sep = "-",
                          digits = 1)
                )
 })
@@ -27,8 +29,13 @@ test_that("pretty_ci can handle a vector of inputs", {
 
 
 test_that("pretty_ci can be used in a dplyr workflow", {
-  df_input <- data_frame(est = c(0,1), lci = c(0, 2), uci = c(1, 4))
-  df_int <- mutate(df_input, ci = pretty_ci(est = est, lci = lci, uci = uci, sep = ' by ', digits = 0))
+  df_input <- data_frame(est = c(0, 1), lci = c(0, 2), uci = c(1, 4))
+  df_int <- mutate(df_input, ci = pretty_ci(est = est,
+                                            lci = lci,
+                                            uci = uci,
+                                            sep = " by ",
+                                            digits = 0)
+                   )
   df_output <- c("0 (0 by 1)", "1 (2 by 4)")
 
     expect_equal(nrow(df_input), nrow(df_int))
