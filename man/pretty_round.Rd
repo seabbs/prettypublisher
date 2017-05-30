@@ -20,8 +20,13 @@ A rounded numeric vector formatted as a character vector with trialing zeros.
 Round and format numeric vectors; standardising trailing zeros
 }
 \examples{
+## Rounding a single number
 pretty_round(2.1, digits = 1)
+
+## Rounding with trailing whitespace
 pretty_round(2.1, digits = 2)
+
+##Rounding a vector
 pretty_round(c(2.13, 2.1, 4.165, 8.2323242, 1), digits = 2)
 }
 \seealso{

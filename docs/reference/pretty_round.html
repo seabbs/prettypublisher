@@ -112,7 +112,12 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>pretty_round</span>(<span class='fl'>2.1</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] "2.1"</div><div class='input'><span class='fu'>pretty_round</span>(<span class='fl'>2.1</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] "2.10"</div><div class='input'><span class='fu'>pretty_round</span>(<span class='fu'>c</span>(<span class='fl'>2.13</span>, <span class='fl'>2.1</span>, <span class='fl'>4.165</span>, <span class='fl'>8.2323242</span>, <span class='fl'>1</span>), <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] "2.13" "2.10" "4.17" "8.23" "1.00"</div></pre>
+    <pre class="examples"><div class='input'><span class='co'>## Rounding a single number</span>
+<span class='fu'>pretty_round</span>(<span class='fl'>2.1</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; [1] "2.1"</div><div class='input'>
+<span class='co'>## Rounding with trailing whitespace</span>
+<span class='fu'>pretty_round</span>(<span class='fl'>2.1</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] "2.10"</div><div class='input'>
+<span class='co'>##Rounding a vector</span>
+<span class='fu'>pretty_round</span>(<span class='fu'>c</span>(<span class='fl'>2.13</span>, <span class='fl'>2.1</span>, <span class='fl'>4.165</span>, <span class='fl'>8.2323242</span>, <span class='fl'>1</span>), <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] "2.13" "2.10" "4.17" "8.23" "1.00"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

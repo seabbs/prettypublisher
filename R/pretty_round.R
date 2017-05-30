@@ -10,8 +10,13 @@
 #' @import magrittr
 #' @seealso \code{\link[base]{format}}, and \code{\link[base]{round}} for additional information
 #' @examples
+#' ## Rounding a single number
 #' pretty_round(2.1, digits = 1)
+#'
+#' ## Rounding with trailing whitespace
 #' pretty_round(2.1, digits = 2)
+#'
+#' ##Rounding a vector
 #' pretty_round(c(2.13, 2.1, 4.165, 8.2323242, 1), digits = 2)
 pretty_round <- function(num, digits = 2, ...) {
   num <- num %>%

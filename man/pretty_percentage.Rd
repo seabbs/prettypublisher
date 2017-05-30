@@ -40,5 +40,5 @@ pretty_percentage(c(1,4,6, 19), 100, digits = 1)
 pretty_percentage(c(1, 2, 4, 5, 2), c(100, 40, 50, 40, 30), as_per = FALSE)
 }
 \seealso{
-pretty_round
+pretty_round pretty_ci
 }

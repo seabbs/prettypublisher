@@ -7,7 +7,7 @@
 #' @param percent_scaling A numeric vector indicating the scaling used,
 #' by default this is 100 as this gives a percentage.
 #' @param as_per Logical indicating if the percentage should be deliminated by a \% symbol.
-#' @seealso pretty_round
+#' @seealso pretty_round pretty_ci
 #' @return A character vector or string, with a percentage and
 #' the numerator and denominator used to calculate it
 #' @export

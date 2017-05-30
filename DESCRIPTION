@@ -9,18 +9,15 @@ Maintainer: Sam Abbott <contact@samabbott.co.uk>
 Description: Provides a variety of general purpose functions that help in formatting R markdown documents ready for publication. Specifically focussed on improving the appearance of word documents, although all functions should also work for both pdf, and html. 
 License: GPL-3 | file LICENSE
 Imports: magrittr,
-    stringr
+    stringr,
+    dplyr
 Suggests: testthat,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-URL: https://seabss.github.io/prettypublisher, 
+URL: http://www.samabbott.co.uk/prettypublisher, 
      https://github.com/seabbs/prettypublisher
 BugReports: https://github.com/seabbs/prettypublisher/issues
 Encoding: UTF-8
 RoxygenNote: 6.0.1
 LazyData: true
-
-
-
-

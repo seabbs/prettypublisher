@@ -11,7 +11,7 @@ Provides a variety of general purpose functions that help in formatting R markdo
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://seabss.github.io/prettypublisher}
+  \item \url{http://www.samabbott.co.uk/prettypublisher}
   \item \url{https://github.com/seabbs/prettypublisher}
   \item Report bugs at \url{https://github.com/seabbs/prettypublisher/issues}
 }
