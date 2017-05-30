@@ -33,7 +33,8 @@
 #' x <- data_frame(est = c(0,1), lci = c(0, 2), uci = c(1, 4))
 #' x <- x %>% mutate(ci = est %>% pretty_ci(lci = lci, uci = uci, sep = ' by ', digits = 0))
 #'
-pretty_ci <- function(est, lci, uci, sep = " to ", digits = 2, inline = FALSE, note = "95% CI") {
+pretty_ci <- function(est, lci, uci, sep = " to ", digits = 2,
+                      inline = FALSE, note = "95% CI") {
 
   df <- data_frame(est, lci, uci)
 
@@ -48,8 +49,7 @@ pretty_ci <- function(est, lci, uci, sep = " to ", digits = 2, inline = FALSE, n
               mutate(ci = paste0(est, " (", lci, sep, uci, ")"))
 
   if (inline) {
-    df <- df %>%
-            mutate(ci = pretty_inline_ci(ci, note = note))
+    df$ci <-  pretty_inline_ci(df$ci, note = note)
   }
 
 
