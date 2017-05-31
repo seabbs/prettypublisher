@@ -4,7 +4,7 @@
 \name{prettypublisher-package}
 \alias{prettypublisher}
 \alias{prettypublisher-package}
-\title{prettypublisher: Formatting Functions For Publishable R Markdown Documents}
+\title{prettypublisher: Formatting Functions for Publishable R Markdown Documents}
 \description{
 Provides a variety of general purpose functions that help in formatting R markdown documents ready for publication. Specifically focussed on improving the appearance of word documents, although all functions should also work for both pdf, and html.
 }
