@@ -1,5 +1,15 @@
 context("pretty_captioner")
 
+test_that("pretty_captioner can be used inline", {
+  expect_equal("Figure  1", pretty_captioner('1',
+                                             display = 'c',
+                                             cap_fun_name = "test0"))
+  expect_equal("figure  1", pretty_captioner('1',
+                                             display = 'c',
+                                             cap_fun_name = "test0",
+                                             inline = TRUE))
+})
+
 test_that("pretty_captioner can correctly generate multiple captions", {
   expect_equal("Figure  1: Example caption",
                pretty_captioner('1',
@@ -33,18 +43,3 @@ test_that('pretty_captioner can detect if captioner function has been altered', 
   expect_error(pretty_captioner('2', 'Example caption', cap_fun_name = 'test3'))
   })
 
-#' ## First call to pretty_captioner intialising the captioner function
-#' pretty_captioner('1', 'Example caption')
-#'
-#' ## Second call
-#' pretty_captioner('2', 'Example caption 2')
-#'
-#' ## Displaying the cite information only for use inline
-#' pretty_captioner('2', display = 'c', inline = TRUE)
-#'
-#' ## Reference in text without a caption
-#' pretty_captioner('3')
-#'
-#' ##Changing the prefix, adding a sec_prefix and reinitialising
-#' pretty_captioner('1', 'Example caption 1', prefix = 'Table', sec_prefix = 'S', reinit = TRUE)
-#'

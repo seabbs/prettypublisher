@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A wrapper for the captioner function — pretty_captioner • prettypublisher</title>
+<title>A wrapper for pretty_captioner with sensible defaults for captioning figures — pretty_figref • prettypublisher</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -76,20 +76,16 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A wrapper for the captioner function</h1>
+    <h1>A wrapper for pretty_captioner with sensible defaults for captioning figures</h1>
     </div>
 
     
-    <p>A wrapper for the <code><a href='http://www.rdocumentation.org/packages/captioner/topics/captioner'>captioner</a></code> function. This provides captioning functionality via <code><a href='http://www.rdocumentation.org/packages/captioner/topics/captioner'>captioner</a></code>
-in word, html, and pdf. The wrapper can be used without initialisation, adds a secondary prefix, and an optional inline arguement.
-It works by intialising a second <code><a href='http://www.rdocumentation.org/packages/captioner/topics/captioner'>captioner</a></code> function which can then be called within the main function.
-Best practise is to set reinit = TRUE on first using the funciton.</p>
+    <p>A wrapper for pretty_captioner with sensible defaults for captioning figures</p>
     
 
-    <pre class="usage"><span class='fu'>pretty_captioner</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>caption</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>prefix</span> <span class='kw'>=</span> <span class='st'>"Figure"</span>,
+    <pre class="usage"><span class='fu'>pretty_figref</span>(<span class='kw'>label</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>caption</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>prefix</span> <span class='kw'>=</span> <span class='st'>"Figure"</span>,
   <span class='kw'>sec_prefix</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>auto_space</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>levels</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>infix</span> <span class='kw'>=</span> <span class='st'>"."</span>, <span class='kw'>display</span> <span class='kw'>=</span> <span class='st'>"full"</span>, <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>reinit</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>cap_fun_name</span> <span class='kw'>=</span> <span class='st'>"pretty_cap.cap"</span>, <span class='no'>...</span>)</pre>
+  <span class='kw'>infix</span> <span class='kw'>=</span> <span class='st'>"."</span>, <span class='kw'>display</span> <span class='kw'>=</span> <span class='st'>"full"</span>, <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>reinit</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -148,10 +144,6 @@ and num (or n) displays just the number.</p></td>
       <td><p>Logical indicating whether to reinitialise the underlying captioner function.</p></td>
     </tr>
     <tr>
-      <th>cap_fun_name</th>
-      <td><p>A character string indicating the name to assign to the underlying captioner function.</p></td>
-    </tr>
-    <tr>
       <th>...</th>
       <td><p>Pass additional arguements to the intialised <code><a href='http://www.rdocumentation.org/packages/captioner/topics/captioner'>captioner</a></code> function</p></td>
     </tr>
@@ -163,7 +155,7 @@ and num (or n) displays just the number.</p></td>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>As a wrapper for the <code><a href='http://www.rdocumentation.org/packages/captioner/topics/captioner'>captioner</a></code> function <code>pretty_captioner</code> intialises a
+    <p>As a wrapper for the <code><a href='http://www.rdocumentation.org/packages/captioner/topics/captioner'>captioner</a></code> function <code><a href='pretty_captioner.html'>pretty_captioner</a></code> intialises a
 <code><a href='http://www.rdocumentation.org/packages/captioner/topics/captioner'>captioner</a></code> function in the global enviroment. This is then used by pretty_captioner
 to return a character string containing the prefix, sec_prefix, and object number with or without a caption.
 The initial numbering is determined based on the order of caption creation. However, this order is modified based on the citations you use.
@@ -171,18 +163,21 @@ The first object to be cited will be moved to the beginning of the list, becomin
 auto_space, levels, type, and infix) requires the captioner function to be reinitialised by setting reinit to TRUE.
 For more details see <code><a href='http://www.rdocumentation.org/packages/captioner/topics/captioner'>captioner</a></code>.</p>
     
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p>pretty_captioner pretty_suptabref pretty_figref pretty_supfigref</p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## First call to pretty_captioner intialising the captioner function</span>
-<span class='fu'>pretty_captioner</span>(<span class='st'>'1'</span>, <span class='st'>'Example caption'</span>, <span class='kw'>reinit</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='message'>Initialising captioning function: pretty_cap.cap</span></div><div class='output co'>#&gt; [1] "Figure  1: Example caption"</div><div class='input'>
-<span class='co'>## Second call</span>
-<span class='fu'>pretty_captioner</span>(<span class='st'>'2'</span>, <span class='st'>'Example caption 2'</span>)</div><div class='output co'>#&gt; [1] "Figure  2: Example caption 2"</div><div class='input'>
-<span class='co'>## Displaying the cite information only for use inline</span>
-<span class='fu'>pretty_captioner</span>(<span class='st'>'2'</span>, <span class='kw'>display</span> <span class='kw'>=</span> <span class='st'>'c'</span>, <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "figure  2"</div><div class='input'>
-<span class='co'>## Reference in text without a caption</span>
-<span class='fu'>pretty_captioner</span>(<span class='st'>'3'</span>)</div><div class='output co'>#&gt; [1] "Figure  3"</div><div class='input'>
-<span class='co'>##Changing the prefix, adding a sec_prefix and reinitialising</span>
-<span class='fu'>pretty_captioner</span>(<span class='st'>'1'</span>, <span class='st'>'Example caption 1'</span>, <span class='kw'>prefix</span> <span class='kw'>=</span> <span class='st'>'Table'</span>, <span class='kw'>sec_prefix</span> <span class='kw'>=</span> <span class='st'>'S'</span>, <span class='kw'>reinit</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='message'>Initialising captioning function: pretty_cap.cap</span></div><div class='output co'>#&gt; [1] "Table S1: Example caption 1"</div><div class='input'>
+    <pre class="examples"><div class='input'>
+<span class='co'>## Generate a simple reference</span>
+<span class='fu'>pretty_figref</span>(<span class='st'>'1'</span> , <span class='st'>'Example'</span>, <span class='kw'>reinit</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='message'>Initialising captioning function: figref</span></div><div class='output co'>#&gt; [1] "Figure  1: Example"</div><div class='input'>
+<span class='co'>## cite in text</span>
+<span class='fu'>pretty_figref</span>(<span class='st'>'1'</span>)</div><div class='output co'>#&gt; [1] "Figure  1"</div><div class='input'>
+<span class='co'>## Drop captilisation for use in line</span>
+<span class='fu'>pretty_figref</span>(<span class='st'>'1'</span>, <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "figure  1"</div><div class='input'>
+<span class='co'>## Add another table caption</span>
+<span class='fu'>pretty_figref</span>(<span class='st'>'2'</span> , <span class='st'>'Example 2'</span>)</div><div class='output co'>#&gt; [1] "Figure  2: Example 2"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -193,6 +188,8 @@ For more details see <code><a href='http://www.rdocumentation.org/packages/capti
       <li><a href="#value">Value</a></li>
 
       <li><a href="#details">Details</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

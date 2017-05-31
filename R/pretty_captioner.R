@@ -1,15 +1,16 @@
 
 #' A wrapper for the captioner function
 #'
-#' @description A wrapper for the \code{\link[captioner]{captioner}} function.
-#' This provides captioning functionality via \code{\link[captioner]{captioner}} in word, html, and pdf.
-#' The wrapper can be used without initialisation, adds a secondary prefix, and an optional inline arguement.
+#' @description A wrapper for the \code{\link[captioner]{captioner}} function. This provides captioning functionality via \code{\link[captioner]{captioner}}
+#'in word, html, and pdf. The wrapper can be used without initialisation, adds a secondary prefix, and an optional inline arguement.
 #' It works by intialising a second \code{\link[captioner]{captioner}} function which can then be called within the main function.
-#' @details As a wrapper for the \code{\link[captioner]{captioner}} function pretty_captioner intialises a
+#' Best practise is to set reinit = TRUE on first using the funciton.
+#' @details As a wrapper for the \code{\link[captioner]{captioner}} function \code{\link[prettypublisher]{pretty_captioner}} intialises a
 #' \code{\link[captioner]{captioner}} function in the global enviroment. This is then used by pretty_captioner
 #' to return a character string containing the prefix, sec_prefix, and object number with or without a caption.
 #' The initial numbering is determined based on the order of caption creation. However, this order is modified based on the citations you use.
-#' The first figure to be cited will be moved to the beginning of the list, becoming Figure 1.
+#' The first object to be cited will be moved to the beginning of the list, becoming object 1. Changing captioner parameters (prefix, sec_prefix,
+#' auto_space, levels, type, and infix) requires the captioner function to be reinitialised by setting reinit to TRUE.
 #' For more details see \code{\link[captioner]{captioner}}.
 #' @param label Character string containing a unique object name.
 #' @param caption Character string containing the object caption.
@@ -30,7 +31,7 @@
 #'
 #' @examples
 #' ## First call to pretty_captioner intialising the captioner function
-#' pretty_captioner('1', 'Example caption')
+#' pretty_captioner('1', 'Example caption', reinit = TRUE)
 #'
 #' ## Second call
 #' pretty_captioner('2', 'Example caption 2')
@@ -86,6 +87,10 @@ pretty_captioner <- function(label = NULL, caption = NULL, prefix = "Figure",
   }
 
   cap <- get(cap_fun_name)
+
+  if (inline) {
+    display = 'c'
+  }
 
   current_cap <- cap(name = label, caption = caption, display = display, ...)
 
