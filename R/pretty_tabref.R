@@ -1,7 +1,6 @@
 
 #' A wrapper for pretty_captioner with sensible defaults for captioning tables
 #'
-#' @seealso pretty_captioner pretty_suptabref pretty_figref pretty_supfigref
 #' @export
 #' @inherit pretty_captioner
 #' @examples
@@ -24,8 +23,8 @@ pretty_tabref <- function(label = NULL, caption = NULL, prefix = "Table",
                           inline = FALSE, reinit = FALSE, ...) {
 
   pretty_captioner(label = label, caption = caption, prefix = prefix,
-                               sec_prefix = sec_prefix, auto_space = auto_space, levels = levels,
-                               type = type, infix = infix, display = display,
-                               inline = inline, reinit = reinit,
-                               cap_fun_name = "tabref", ...)
+                   sec_prefix = sec_prefix, auto_space = auto_space,
+                   levels = levels, type = type, infix = infix,
+                   display = display, inline = inline, reinit = reinit,
+                   cap_fun_name = "tabref", ...)
 }

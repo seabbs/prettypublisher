@@ -74,5 +74,7 @@ pretty_suptabref('2' , 'Example 2')
 
 }
 \seealso{
-pretty_captioner pretty_suptabref pretty_figref pretty_supfigref
+\code{\link[prettypublisher]{prettypublisher}} has a group of related functions which use various defaults: \code{\link[prettypublisher]{pretty_captioner}},
+ \code{\link[prettypublisher]{pretty_figref}}, \code{\link[prettypublisher]{pretty_supfigref}}, \code{\link[prettypublisher]{pretty_tabref}},
+ and \code{\link[prettypublisher]{pretty_suptabref}}.
 }

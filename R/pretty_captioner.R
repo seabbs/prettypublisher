@@ -23,6 +23,9 @@
 #' @param inline Logical indicating whether the function should display the prefix uncapitalised/capitalised.
 #' @param reinit Logical indicating whether to reinitialise the underlying captioner function.
 #' @param ... Pass additional arguements to the intialised \code{\link[captioner]{captioner}} function
+#' @seealso  \code{\link[prettypublisher]{prettypublisher}} has a group of related functions which use various defaults: \code{\link[prettypublisher]{pretty_captioner}},
+#'  \code{\link[prettypublisher]{pretty_figref}}, \code{\link[prettypublisher]{pretty_supfigref}}, \code{\link[prettypublisher]{pretty_tabref}},
+#'  and \code{\link[prettypublisher]{pretty_suptabref}}.
 #' @importFrom captioner captioner
 #' @importFrom stringr str_replace
 #' @inherit captioner::captioner
@@ -68,15 +71,16 @@ pretty_captioner <- function(label = NULL, caption = NULL, prefix = "Figure",
   if (!exists(cap_fun_name) | reinit) {
     message("Initialising captioning function: ", cap_fun_name)
 
-    if (is.null(sec_prefix)) {
-      com_prefix <- prefix
-    } else {
-      com_prefix <- paste0(prefix, " ", sec_prefix)
-      auto_space <- FALSE
+    if (auto_space) {
+      com_prefix <- paste0(prefix, ' ')
+    }
+
+    if (!is.null(sec_prefix)) {
+      com_prefix <- paste0(com_prefix, sec_prefix)
     }
 
     cap <- captioner(prefix = com_prefix,
-                     auto_space = auto_space,
+                     auto_space = FALSE,
                      levels = levels,
                      type = type,
                      infix = infix)
@@ -89,7 +93,7 @@ pretty_captioner <- function(label = NULL, caption = NULL, prefix = "Figure",
   cap <- get(cap_fun_name)
 
   if (inline) {
-    display = 'c'
+    display <- "c"
   }
 
   current_cap <- cap(name = label, caption = caption, display = display, ...)

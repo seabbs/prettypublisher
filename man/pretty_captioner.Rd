@@ -80,3 +80,8 @@ pretty_captioner('3')
 pretty_captioner('1', 'Example caption 1', prefix = 'Table', sec_prefix = 'S', reinit = TRUE)
 
 }
+\seealso{
+\code{\link[prettypublisher]{prettypublisher}} has a group of related functions which use various defaults: \code{\link[prettypublisher]{pretty_captioner}},
+ \code{\link[prettypublisher]{pretty_figref}}, \code{\link[prettypublisher]{pretty_supfigref}}, \code{\link[prettypublisher]{pretty_tabref}},
+ and \code{\link[prettypublisher]{pretty_suptabref}}.
+}

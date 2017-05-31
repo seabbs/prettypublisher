@@ -24,8 +24,8 @@ pretty_figref <- function(label = NULL, caption = NULL, prefix = "Figure",
                           inline = FALSE, reinit = FALSE, ...) {
 
   pretty_captioner(label = label, caption = caption, prefix = prefix,
-                   sec_prefix = sec_prefix, auto_space = auto_space, levels = levels,
-                   type = type, infix = infix, display = display,
-                   inline = inline, reinit = reinit,
-                   cap_fun_name = "figref", ...)
+                   sec_prefix = sec_prefix, auto_space = auto_space,
+                   levels = levels, type = type, infix = infix,
+                   display = display, inline = inline,
+                   reinit = reinit, cap_fun_name = "figref", ...)
 }

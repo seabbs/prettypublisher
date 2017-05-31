@@ -165,19 +165,21 @@ For more details see <code><a href='http://www.rdocumentation.org/packages/capti
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>pretty_captioner pretty_suptabref pretty_figref pretty_supfigref</p>
+    <p><code><a href='prettypublisher-package.html'>prettypublisher</a></code> has a group of related functions which use various defaults: <code><a href='pretty_captioner.html'>pretty_captioner</a></code>,
+ <code><a href='pretty_figref.html'>pretty_figref</a></code>, <code><a href='pretty_supfigref.html'>pretty_supfigref</a></code>, <code>pretty_tabref</code>,
+ and <code><a href='pretty_suptabref.html'>pretty_suptabref</a></code>.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## Generate a simple reference</span>
-<span class='fu'>pretty_tabref</span>(<span class='st'>'1'</span> , <span class='st'>'Example'</span>, <span class='kw'>reinit</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='message'>Initialising captioning function: tabref</span></div><div class='output co'>#&gt; [1] "Table  1: Example"</div><div class='input'>
+<span class='fu'>pretty_tabref</span>(<span class='st'>'1'</span> , <span class='st'>'Example'</span>, <span class='kw'>reinit</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='message'>Initialising captioning function: tabref</span></div><div class='output co'>#&gt; [1] "Table 1: Example"</div><div class='input'>
 <span class='co'>## cite in text</span>
-<span class='fu'>pretty_tabref</span>(<span class='st'>'1'</span>)</div><div class='output co'>#&gt; [1] "Table  1"</div><div class='input'>
+<span class='fu'>pretty_tabref</span>(<span class='st'>'1'</span>)</div><div class='output co'>#&gt; [1] "Table 1"</div><div class='input'>
 <span class='co'>## Drop captilisation for use in line</span>
-<span class='fu'>pretty_tabref</span>(<span class='st'>'1'</span>, <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "table  1"</div><div class='input'>
+<span class='fu'>pretty_tabref</span>(<span class='st'>'1'</span>, <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "table 1"</div><div class='input'>
 <span class='co'>## Add another table caption</span>
-<span class='fu'>pretty_tabref</span>(<span class='st'>'2'</span> , <span class='st'>'Example 2'</span>)</div><div class='output co'>#&gt; [1] "Table  2: Example 2"</div><div class='input'>
+<span class='fu'>pretty_tabref</span>(<span class='st'>'2'</span> , <span class='st'>'Example 2'</span>)</div><div class='output co'>#&gt; [1] "Table 2: Example 2"</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

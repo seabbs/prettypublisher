@@ -171,16 +171,22 @@ The first object to be cited will be moved to the beginning of the list, becomin
 auto_space, levels, type, and infix) requires the captioner function to be reinitialised by setting reinit to TRUE.
 For more details see <code><a href='http://www.rdocumentation.org/packages/captioner/topics/captioner'>captioner</a></code>.</p>
     
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><code><a href='prettypublisher-package.html'>prettypublisher</a></code> has a group of related functions which use various defaults: <code>pretty_captioner</code>,
+ <code><a href='pretty_figref.html'>pretty_figref</a></code>, <code><a href='pretty_supfigref.html'>pretty_supfigref</a></code>, <code><a href='pretty_tabref.html'>pretty_tabref</a></code>,
+ and <code><a href='pretty_suptabref.html'>pretty_suptabref</a></code>.</p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## First call to pretty_captioner intialising the captioner function</span>
-<span class='fu'>pretty_captioner</span>(<span class='st'>'1'</span>, <span class='st'>'Example caption'</span>, <span class='kw'>reinit</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='message'>Initialising captioning function: pretty_cap.cap</span></div><div class='output co'>#&gt; [1] "Figure  1: Example caption"</div><div class='input'>
+<span class='fu'>pretty_captioner</span>(<span class='st'>'1'</span>, <span class='st'>'Example caption'</span>, <span class='kw'>reinit</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='message'>Initialising captioning function: pretty_cap.cap</span></div><div class='output co'>#&gt; [1] "Figure 1: Example caption"</div><div class='input'>
 <span class='co'>## Second call</span>
-<span class='fu'>pretty_captioner</span>(<span class='st'>'2'</span>, <span class='st'>'Example caption 2'</span>)</div><div class='output co'>#&gt; [1] "Figure  2: Example caption 2"</div><div class='input'>
+<span class='fu'>pretty_captioner</span>(<span class='st'>'2'</span>, <span class='st'>'Example caption 2'</span>)</div><div class='output co'>#&gt; [1] "Figure 2: Example caption 2"</div><div class='input'>
 <span class='co'>## Displaying the cite information only for use inline</span>
-<span class='fu'>pretty_captioner</span>(<span class='st'>'2'</span>, <span class='kw'>display</span> <span class='kw'>=</span> <span class='st'>'c'</span>, <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "figure  2"</div><div class='input'>
+<span class='fu'>pretty_captioner</span>(<span class='st'>'2'</span>, <span class='kw'>display</span> <span class='kw'>=</span> <span class='st'>'c'</span>, <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "figure 2"</div><div class='input'>
 <span class='co'>## Reference in text without a caption</span>
-<span class='fu'>pretty_captioner</span>(<span class='st'>'3'</span>)</div><div class='output co'>#&gt; [1] "Figure  3"</div><div class='input'>
+<span class='fu'>pretty_captioner</span>(<span class='st'>'3'</span>)</div><div class='output co'>#&gt; [1] "Figure 3"</div><div class='input'>
 <span class='co'>##Changing the prefix, adding a sec_prefix and reinitialising</span>
 <span class='fu'>pretty_captioner</span>(<span class='st'>'1'</span>, <span class='st'>'Example caption 1'</span>, <span class='kw'>prefix</span> <span class='kw'>=</span> <span class='st'>'Table'</span>, <span class='kw'>sec_prefix</span> <span class='kw'>=</span> <span class='st'>'S'</span>, <span class='kw'>reinit</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='message'>Initialising captioning function: pretty_cap.cap</span></div><div class='output co'>#&gt; [1] "Table S1: Example caption 1"</div><div class='input'>
 </div></pre>
@@ -193,6 +199,8 @@ For more details see <code><a href='http://www.rdocumentation.org/packages/capti
       <li><a href="#value">Value</a></li>
 
       <li><a href="#details">Details</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
