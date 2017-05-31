@@ -50,8 +50,8 @@ pretty_captioner <- function(label = NULL, caption = NULL, prefix = "Figure",
                              inline = FALSE, reinit = FALSE,
                              cap_fun_name = "pretty_cap.cap", ...) {
   if (is.null(caption)) {
-    caption <- ''
-    display = 'c'
+    caption <- ""
+    display <- "c"
   }
 
   if (exists(cap_fun_name) & !reinit) {
