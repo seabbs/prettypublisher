@@ -2,7 +2,7 @@ Package: prettypublisher
 Type: Package
 Version: 0.2.1.9000
 Title: Formatting Functions for Publishable R Markdown Documents
-Authors@R: c(person("Sam Abbott", "Developer", role = c("aut", "cre"),
+Authors@R: c(person("Sam Abbott", role = c("aut", "cre"),
                      email = "contact@samabbott.co.uk"))
 Description: Provides a variety of general purpose functions that help in formatting R markdown documents ready for publication. Specifically focussed on improving the appearance of word documents, although all functions should also work for both pdf, and html. 
 License: GPL-3 | file LICENSE
