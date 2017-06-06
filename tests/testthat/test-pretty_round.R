@@ -15,3 +15,15 @@ test_that("pretty_round is correctly dealing with numeric vector inputs", {
   expect_length(pretty_round(vector), length(vector))
   expect_equal(char_vector, pretty_round(vector, digits = 2))
 })
+
+test_that("pretty round can succesfully convert character input", {
+  expect_equal("2.00", pretty_round("2", digits = 2))
+})
+
+
+test_that("pretty round can pass values not to be formated", {
+  vector <- c("", " ", "Inf", NaN, NA)
+  char_vector <- c("", "", "Inf", NaN, NA)
+  expect_length(pretty_round(vector), length(vector))
+  expect_equal(char_vector, pretty_round(vector, digits = 2))
+})

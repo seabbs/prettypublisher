@@ -4,12 +4,16 @@
 \alias{pretty_round}
 \title{Round and format numeric vectors; standardising trailing zeros}
 \usage{
-pretty_round(num, digits = 2, ...)
+pretty_round(num, digits = 2, to_pass = c("", " ", "Inf", NaN, NA), ...)
 }
 \arguments{
-\item{num}{A numeric vector.}
+\item{num}{A numeric or character vector coercible to a numeric vector.
+Empty character vectors will be returned by the function.}
 
 \item{digits}{Integer indicating the number of decimal places to be used.}
+
+\item{to_pass}{A character vector specifying what to pass without reformating,
+by default this includes; NA, NaN, "Inf", "", and " ".}
 
 \item{...}{Pass additional arguements to \code{\link[base]{format}}.}
 }
@@ -28,6 +32,10 @@ pretty_round(2.1, digits = 2)
 
 ##Rounding a vector
 pretty_round(c(2.13, 2.1, 4.165, 8.2323242, 1), digits = 2)
+
+## Passed without rounding
+pretty_round(c("", " ", "Inf", NaN, NA), digits = 2)
+
 }
 \seealso{
 \code{\link[base]{format}}, and \code{\link[base]{round}} for additional information

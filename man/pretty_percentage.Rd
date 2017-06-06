@@ -8,7 +8,8 @@ pretty_percentage(num, denom, digits = 2, percent_scaling = 100,
   as_per = TRUE, ...)
 }
 \arguments{
-\item{num}{A numeric vector.}
+\item{num}{A numeric or character vector coercible to a numeric vector.
+Empty character vectors will be returned by the function.}
 
 \item{denom}{A numeric vector}
 

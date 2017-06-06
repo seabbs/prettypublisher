@@ -14,7 +14,8 @@ pretty_table(df, col_names = NULL, footer = NULL, cap_fun = pretty_tabref,
 
 \item{footer}{The desired footer as a character string.}
 
-\item{cap_fun}{Caption function to wrap.}
+\item{cap_fun}{Caption function to wrap, if supplied pretty_table defaults
+to defining an empty caption.}
 
 \item{label}{A character string of the reference label for the table}
 

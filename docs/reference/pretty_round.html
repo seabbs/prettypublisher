@@ -83,18 +83,24 @@
     <p>Round and format numeric vectors; standardising trailing zeros</p>
     
 
-    <pre class="usage"><span class='fu'>pretty_round</span>(<span class='no'>num</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>pretty_round</span>(<span class='no'>num</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>to_pass</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>""</span>, <span class='st'>" "</span>, <span class='st'>"Inf"</span>, <span class='fl'>NaN</span>, <span class='fl'>NA</span>), <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>num</th>
-      <td><p>A numeric vector.</p></td>
+      <td><p>A numeric or character vector coercible to a numeric vector.
+Empty character vectors will be returned by the function.</p></td>
     </tr>
     <tr>
       <th>digits</th>
       <td><p>Integer indicating the number of decimal places to be used.</p></td>
+    </tr>
+    <tr>
+      <th>to_pass</th>
+      <td><p>A character vector specifying what to pass without reformating,
+by default this includes; NA, NaN, "Inf", "", and " ".</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -117,7 +123,10 @@
 <span class='co'>## Rounding with trailing whitespace</span>
 <span class='fu'>pretty_round</span>(<span class='fl'>2.1</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] "2.10"</div><div class='input'>
 <span class='co'>##Rounding a vector</span>
-<span class='fu'>pretty_round</span>(<span class='fu'>c</span>(<span class='fl'>2.13</span>, <span class='fl'>2.1</span>, <span class='fl'>4.165</span>, <span class='fl'>8.2323242</span>, <span class='fl'>1</span>), <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] "2.13" "2.10" "4.17" "8.23" "1.00"</div></pre>
+<span class='fu'>pretty_round</span>(<span class='fu'>c</span>(<span class='fl'>2.13</span>, <span class='fl'>2.1</span>, <span class='fl'>4.165</span>, <span class='fl'>8.2323242</span>, <span class='fl'>1</span>), <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] "2.13" "2.10" "4.17" "8.23" "1.00"</div><div class='input'>
+<span class='co'>## Passed without rounding</span>
+<span class='fu'>pretty_round</span>(<span class='fu'>c</span>(<span class='st'>""</span>, <span class='st'>" "</span>, <span class='st'>"Inf"</span>, <span class='fl'>NaN</span>, <span class='fl'>NA</span>), <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] ""    ""    "Inf" "NaN" NA   </div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

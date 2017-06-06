@@ -6,7 +6,8 @@
 #' @param df A data frame to be converted to a markdown table.
 #' @param col_names A character vector of replacement column names.
 #' @param footer The desired footer as a character string.
-#' @param cap_fun Caption function to wrap.
+#' @param cap_fun Caption function to wrap, if supplied pretty_table defaults
+#'  to defining an empty caption.
 #' @param label A character string of the reference label for the table
 #' @param caption A character string of the required table caption.
 #' @param tab_fun Table function to wrap. Supported functions are \code{\link[pander]{pander}}
@@ -34,8 +35,9 @@
 #' library(knitr)
 #'
 #' pretty_table(iris[1:5, 1:5], tab_fun = kable)
-pretty_table <- function(df, col_names = NULL, footer = NULL, cap_fun = pretty_tabref,
-                        label = NULL, caption = NULL, tab_fun = pander, ...) {
+pretty_table <- function(df, col_names = NULL, footer = NULL,
+                         cap_fun = pretty_tabref, label = NULL,
+                         caption = NULL, tab_fun = pander, ...) {
 
   if (is.null(tab_fun)) {
     stop("Requires a table function to be set")
@@ -71,9 +73,6 @@ pretty_table <- function(df, col_names = NULL, footer = NULL, cap_fun = pretty_t
     cap <- ""
   }else {
     ## Add dummy arguements for label and caption if not supplied
-    if (is.null(label) && is.null(caption)) {
-      cap <- ""
-    }else {
       if (is.null(label)) {
         label <- runif(1)
       }
@@ -82,7 +81,6 @@ pretty_table <- function(df, col_names = NULL, footer = NULL, cap_fun = pretty_t
       }
       cap <- cap_fun(label, caption)
     }
-  }
 
   ## Add label and caption and make table
   tab_fun(table %>% as.data.frame, caption = cap, ...)

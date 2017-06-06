@@ -105,7 +105,8 @@ has been knit to word.</p>
     </tr>
     <tr>
       <th>cap_fun</th>
-      <td><p>Caption function to wrap.</p></td>
+      <td><p>Caption function to wrap, if supplied pretty_table defaults
+to defining an empty caption.</p></td>
     </tr>
     <tr>
       <th>label</th>
@@ -134,7 +135,7 @@ and <code><a href='http://www.rdocumentation.org/packages/knitr/topics/kable'>ka
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## A simple table</span>
-<span class='fu'>pretty_table</span>(<span class='no'>iris</span>[<span class='fl'>1</span>:<span class='fl'>5</span>, <span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='output co'>#&gt; 
+<span class='fu'>pretty_table</span>(<span class='no'>iris</span>[<span class='fl'>1</span>:<span class='fl'>5</span>, <span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='output co'>#&gt; <span class='message'>Initialising captioning function: tabref</span></div><div class='output co'>#&gt; 
 #&gt; -------------------------------------------------------------------
 #&gt;  Sepal.Length   Sepal.Width   Petal.Length   Petal.Width   Species 
 #&gt; -------------- ------------- -------------- ------------- ---------
@@ -148,6 +149,8 @@ and <code><a href='http://www.rdocumentation.org/packages/knitr/topics/kable'>ka
 #&gt; 
 #&gt;       5             3.6           1.4            0.2       setosa  
 #&gt; -------------------------------------------------------------------
+#&gt; 
+#&gt; Table: Table 1: 
 #&gt; </div><div class='input'>
 <span class='co'>## Renaming columns</span>
 <span class='fu'>pretty_table</span>(<span class='no'>iris</span>[<span class='fl'>1</span>:<span class='fl'>5</span>, <span class='fl'>1</span>:<span class='fl'>5</span>], <span class='kw'>col_names</span> <span class='kw'>=</span> <span class='fu'>as.character</span>(<span class='fl'>1</span>:<span class='fl'>5</span>))</div><div class='output co'>#&gt; 
@@ -164,6 +167,8 @@ and <code><a href='http://www.rdocumentation.org/packages/knitr/topics/kable'>ka
 #&gt; 
 #&gt;  5  3.6 1.4 0.2 setosa
 #&gt; ----------------------
+#&gt; 
+#&gt; Table: Table 2: 
 #&gt; </div><div class='input'>
 <span class='co'>## Adding a footer</span>
 <span class='fu'>pretty_table</span>(<span class='no'>iris</span>[<span class='fl'>1</span>:<span class='fl'>5</span>, <span class='fl'>1</span>:<span class='fl'>5</span>], <span class='kw'>footer</span> <span class='kw'>=</span> <span class='st'>'Example footer'</span>)</div><div class='output co'>#&gt; 
@@ -182,6 +187,8 @@ and <code><a href='http://www.rdocumentation.org/packages/knitr/topics/kable'>ka
 #&gt; 
 #&gt; Example footer                                                     
 #&gt; -------------------------------------------------------------------
+#&gt; 
+#&gt; Table: Table 3: 
 #&gt; </div><div class='input'>
 <span class='co'>## Changing to a kable table</span>
 <span class='fu'>library</span>(<span class='no'>knitr</span>)

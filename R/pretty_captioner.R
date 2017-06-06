@@ -72,7 +72,7 @@ pretty_captioner <- function(label = NULL, caption = NULL, prefix = "Figure",
     message("Initialising captioning function: ", cap_fun_name)
 
     if (auto_space) {
-      com_prefix <- paste0(prefix, ' ')
+      com_prefix <- paste0(prefix, " ")
     }
 
     if (!is.null(sec_prefix)) {
