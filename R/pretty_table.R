@@ -34,7 +34,7 @@
 #' library(knitr)
 #'
 #' pretty_table(iris[1:5, 1:5], tab_fun = kable)
-pretty_table <- function(df, col_names = NULL, footer = NULL, cap_fun = NULL,
+pretty_table <- function(df, col_names = NULL, footer = NULL, cap_fun = pretty_tabref,
                         label = NULL, caption = NULL, tab_fun = pander, ...) {
 
   if (is.null(tab_fun)) {
@@ -75,7 +75,7 @@ pretty_table <- function(df, col_names = NULL, footer = NULL, cap_fun = NULL,
       cap <- ""
     }else {
       if (is.null(label)) {
-        label <- ""
+        label <- runif(1)
       }
       if (is.null(caption)) {
         caption <- ""

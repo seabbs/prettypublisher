@@ -20,8 +20,4 @@ devtools::install_github("seabbs/prettypublisher")
 Example
 -------
 
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-## basic example code
-```
+This is a basic example of using prettypublisher within a dplyr work flow to produce a pretty table

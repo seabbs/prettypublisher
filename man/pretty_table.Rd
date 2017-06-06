@@ -4,7 +4,7 @@
 \alias{pretty_table}
 \title{Wrapper function for pretty tables}
 \usage{
-pretty_table(df, col_names = NULL, footer = NULL, cap_fun = NULL,
+pretty_table(df, col_names = NULL, footer = NULL, cap_fun = pretty_tabref,
   label = NULL, caption = NULL, tab_fun = pander, ...)
 }
 \arguments{

@@ -18,7 +18,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Sam Abbott Developer \email{contact@samabbott.co.uk}
+\strong{Maintainer}: Sam Abbott \email{contact@samabbott.co.uk}
 
 }
 \keyword{internal}
