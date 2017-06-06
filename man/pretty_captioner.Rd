@@ -82,6 +82,7 @@ pretty_captioner('1', 'Example caption 1', prefix = 'Table', sec_prefix = 'S', r
 
 ## Defining captioner function without a subsequent call to the captioning function
 pretty_captioner(prefix = 'Table', sec_prefix = 'S', reinit = TRUE)
+
 }
 \seealso{
 \code{\link[prettypublisher]{prettypublisher}} has a group of related functions which use various defaults: \code{\link[prettypublisher]{pretty_captioner}},
