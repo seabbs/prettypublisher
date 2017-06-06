@@ -49,9 +49,6 @@
 #' ##Changing the prefix, adding a sec_prefix and reinitialising
 #' pretty_captioner('1', 'Example caption 1', prefix = 'Table', sec_prefix = 'S', reinit = TRUE)
 #'
-#' ## Defining captioner function without a subsequent call to the captioning function
-#' pretty_captioner(prefix = 'Table', sec_prefix = 'S', reinit = TRUE)
-#'
 pretty_captioner <- function(label = NULL, caption = NULL, prefix = "Figure",
                              sec_prefix = NULL, auto_space = TRUE, levels = 1,
                              type = NULL, infix = ".", display = "full",
