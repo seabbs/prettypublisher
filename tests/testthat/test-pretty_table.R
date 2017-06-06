@@ -1,10 +1,15 @@
 context("pretty_table")
 
-test_that("pretty_table output matches that from pander", {
+test_that("pretty_table output matches that from kable", {
   df <- iris[1, 1:2]
   expect_equal(kable(df), pretty_table(df, tab_fun = kable))
 })
 
+test_that("pretty_table output matches that from kable;
+          given no caption function specified", {
+  df <- iris[1, 1:2]
+  expect_equal(kable(df), pretty_table(df, cap_fun = NULL, tab_fun = kable))
+})
 
 test_that("pretty_table adds footer for kable function", {
   df <- iris[1, 1:2]

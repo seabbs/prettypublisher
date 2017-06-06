@@ -13,6 +13,7 @@
 #' @param tab_fun Table function to wrap. Supported functions are \code{\link[pander]{pander}}
 #' and \code{\link[knitr]{kable}}, with \code{\link[pander]{pander}} set as the default.
 #' @param ... Pass additional arguements to the wrapped table function.
+#' @importFrom stats runif
 #' @importFrom dplyr add_row bind_cols
 #' @importFrom purrr map
 #' @importFrom pander pander
