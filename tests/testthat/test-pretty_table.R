@@ -80,3 +80,20 @@ test_that("pretty table produces a table with no caption set", {
                                          label = "",
                                          cap_fun = paste0)))
 })
+
+test_that("pretty table can pass a vector", {
+  expect_out <- c("|&nbsp; | &nbsp;|",
+                  "|:------|------:|",
+                  "|       |      1|",
+                  "|       |      2|",
+                  "|       |      3|")
+
+  expect_equal(expect_out,
+               as.character(pretty_table(c(1, 2, 3),
+                                         tab_fun = kable,
+                                         label = "",
+                                         cap_fun = paste0)))
+})
+
+
+

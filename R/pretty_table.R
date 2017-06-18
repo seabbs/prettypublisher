@@ -3,7 +3,8 @@
 #' @description Wraps table functions to provide a single  user interface.
 #' A footer can be added but this requies rows to be merged once the document
 #' has been knit to word.
-#' @param df A data frame to be converted to a markdown table.
+#' @param df A data frame to be converted to a markdown table. Optionally a vector can be passed, this will be reformatted
+#' into a data frame with the vectors names used in the firt column.
 #' @param col_names A character vector of replacement column names.
 #' @param footer The desired footer as a character string.
 #' @param cap_fun Caption function to wrap, if supplied pretty_table defaults
@@ -36,9 +37,21 @@
 #' library(knitr)
 #'
 #' pretty_table(iris[1:5, 1:5], tab_fun = kable)
+#'
+#' ## Passing a named vector of values
+#' pretty_table(c(b = 1, c = 2, a = 3))
+#'
 pretty_table <- function(df, col_names = NULL, footer = NULL,
                          cap_fun = pretty_tabref, label = NULL,
                          caption = NULL, tab_fun = pander, ...) {
+
+  if (!is.data.frame(df) & is.vector(df)) {
+    if (is.null(names(df))) {
+      names(df) <- rep("", length(df))
+    }
+    df <- data.frame(. = names(df), .. = df, row.names = NULL)
+    colnames(df) <- c("&nbsp;", "&nbsp;")
+  }
 
   if (is.null(tab_fun)) {
     stop("Requires a table function to be set")

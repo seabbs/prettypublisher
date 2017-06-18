@@ -8,7 +8,8 @@ pretty_table(df, col_names = NULL, footer = NULL, cap_fun = pretty_tabref,
   label = NULL, caption = NULL, tab_fun = pander, ...)
 }
 \arguments{
-\item{df}{A data frame to be converted to a markdown table.}
+\item{df}{A data frame to be converted to a markdown table. Optionally a vector can be passed, this will be reformatted
+into a data frame with the vectors names used in the firt column.}
 
 \item{col_names}{A character vector of replacement column names.}
 
@@ -49,4 +50,8 @@ pretty_table(iris[1:5, 1:5], footer = 'Example footer')
 library(knitr)
 
 pretty_table(iris[1:5, 1:5], tab_fun = kable)
+
+## Passing a named vector of values
+pretty_table(c(b = 1, c = 2, a = 3))
+
 }
