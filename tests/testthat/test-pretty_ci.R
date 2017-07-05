@@ -5,6 +5,11 @@ test_that("pretty_ci produces a publishable ci", {
                pretty_ci(2, lci = 1, uci = 3, digits = 2, sep = " to "))
 })
 
+test_that("pretty_ci can handle a single string", {
+  expect_equal("2.00 (1.00 to 3.00)",
+               pretty_ci(est = c(2, 1, 3), string = TRUE, digits = 2, sep = " to "))
+})
+
 test_that("pretty_ci can handle character input", {
   expect_equal("2.00 (1.00 to 3.00)",
                pretty_ci("2", lci = "1", uci = "3", digits = 2, sep = " to "))
@@ -47,3 +52,17 @@ test_that("pretty_ci can be used in a dplyr workflow", {
     expect_equal(nrow(df_input), nrow(df_int))
     expect_equal(df_output, df_int$ci)
             })
+
+test_that("pretty_ci can be used in a dplyr workflow with the estimate as a string", {
+  df_input <- data_frame(est = c(0, 1), lci = c(0, 2), uci = c(1, 4))
+  df_int <- mutate(df_input, ci = pretty_ci(est = df_input,
+                                            string = TRUE,
+                                            sep = " by ",
+                                            digits = 0)
+  )
+  df_output <- c("0 (0 by 1)", "1 (2 by 4)")
+
+  expect_equal(nrow(df_input), nrow(df_int))
+  expect_equal(df_output, df_int$ci)
+})
+

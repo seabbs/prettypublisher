@@ -5,6 +5,8 @@
 #' @param est A numeric or character vector of estimates.
 #' @param lci A numeric or character vector of lower confidence/credible intervals.
 #' @param uci A numeric or character vector of upper confidence/credible intervals.
+#' @param string A logicial (defaults to \code{FALSE}) indicating if the estimates are being passed as a string
+#' to \code{est} (formatted as est, lci, uci) or seperately to \code{est}, \code{lci} and \code{uci}. Supports  single estimates or a list/dataframe.
 #' @param sep A character vector indicating the seperator used between the upper and
 #' lower confidence/credible intervals. The default is ' to '.
 #' @param inline Logical operator indicating whether an explanatory note is required.
@@ -33,8 +35,20 @@
 #' x <- data_frame(est = c(0,1), lci = c(0, 2), uci = c(1, 4))
 #' x <- x %>% mutate(ci = est %>% pretty_ci(lci = lci, uci = uci, sep = ' by ', digits = 0))
 #'
-pretty_ci <- function(est, lci, uci, sep = " to ", digits = 2,
+#'## Passing values as a single string
+#'est <- c(0, -1, 1)
+#'pretty_ci(est, string = TRUE)
+#'
+#'est <- data.frame(est = c(1,2), lci = c(0, 1), uci = c(2, 3))
+#'pretty_ci(est, string = TRUE)
+pretty_ci <- function(est, lci, uci, string = FALSE, sep = " to ", digits = 2,
                       inline = FALSE, note = "95% CI") {
+
+  if (string) {
+    lci <- unlist(est[2])
+    uci <- unlist(est[3])
+    est <- unlist(est[1])
+  }
 
   df <- data_frame(est, lci, uci)
 

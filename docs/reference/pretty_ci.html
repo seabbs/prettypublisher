@@ -84,8 +84,8 @@
 intervals, round with trailing zeros and format into the required journal style.</p>
     
 
-    <pre class="usage"><span class='fu'>pretty_ci</span>(<span class='no'>est</span>, <span class='no'>lci</span>, <span class='no'>uci</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>" to "</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>note</span> <span class='kw'>=</span> <span class='st'>"95% CI"</span>)</pre>
+    <pre class="usage"><span class='fu'>pretty_ci</span>(<span class='no'>est</span>, <span class='no'>lci</span>, <span class='no'>uci</span>, <span class='kw'>string</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>" to "</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+  <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>note</span> <span class='kw'>=</span> <span class='st'>"95% CI"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -101,6 +101,11 @@ intervals, round with trailing zeros and format into the required journal style.
     <tr>
       <th>uci</th>
       <td><p>A numeric or character vector of upper confidence/credible intervals.</p></td>
+    </tr>
+    <tr>
+      <th>string</th>
+      <td><p>A logicial (defaults to <code>FALSE</code>) indicating if the estimates are being passed as a string
+to <code>est</code> (formatted as est, lci, uci) or seperately to <code>est</code>, <code>lci</code> and <code>uci</code>. Supports  single estimates or a list/dataframe.</p></td>
     </tr>
     <tr>
       <th>sep</th>
@@ -150,7 +155,13 @@ intervals as a character vector.</p>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>    intersect, setdiff, setequal, union</span></div><div class='input'>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>data_frame</span>(<span class='kw'>est</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>,<span class='fl'>1</span>), <span class='kw'>lci</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>, <span class='fl'>2</span>), <span class='kw'>uci</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1</span>, <span class='fl'>4</span>))
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>x</span> <span class='kw'>%&gt;%</span> <span class='fu'>mutate</span>(<span class='kw'>ci</span> <span class='kw'>=</span> <span class='no'>est</span> <span class='kw'>%&gt;%</span> <span class='fu'>pretty_ci</span>(<span class='kw'>lci</span> <span class='kw'>=</span> <span class='no'>lci</span>, <span class='kw'>uci</span> <span class='kw'>=</span> <span class='no'>uci</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>' by '</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>0</span>))</div></pre>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>x</span> <span class='kw'>%&gt;%</span> <span class='fu'>mutate</span>(<span class='kw'>ci</span> <span class='kw'>=</span> <span class='no'>est</span> <span class='kw'>%&gt;%</span> <span class='fu'>pretty_ci</span>(<span class='kw'>lci</span> <span class='kw'>=</span> <span class='no'>lci</span>, <span class='kw'>uci</span> <span class='kw'>=</span> <span class='no'>uci</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>' by '</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>0</span>))
+
+<span class='co'>## Passing values as a single string</span>
+<span class='no'>est</span> <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='fl'>0</span>, -<span class='fl'>1</span>, <span class='fl'>1</span>)
+<span class='fu'>pretty_ci</span>(<span class='no'>est</span>, <span class='kw'>string</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "0.00 (-1.00 to 1.00)"</div><div class='input'>
+<span class='no'>est</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(<span class='kw'>est</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1</span>,<span class='fl'>2</span>), <span class='kw'>lci</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>, <span class='fl'>1</span>), <span class='kw'>uci</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>2</span>, <span class='fl'>3</span>))
+<span class='fu'>pretty_ci</span>(<span class='no'>est</span>, <span class='kw'>string</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "1.00 (0.00 to 2.00)" "2.00 (1.00 to 3.00)"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
