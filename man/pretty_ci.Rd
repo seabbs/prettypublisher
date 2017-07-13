@@ -5,7 +5,7 @@
 \title{Format an estimate, lower and upper confidence intervals into a single character string}
 \usage{
 pretty_ci(est, lci, uci, string = FALSE, sep = " to ", digits = 2,
-  inline = FALSE, note = "95\% CI")
+  inline = FALSE, note = "95\% CI ", percentage = FALSE)
 }
 \arguments{
 \item{est}{A numeric or character vector of estimates.}
@@ -25,6 +25,9 @@ lower confidence/credible intervals. The default is ' to '.}
 \item{inline}{Logical operator indicating whether an explanatory note is required.}
 
 \item{note}{A character vector indicating the explanatory note to be used.}
+
+\item{percentage}{A logical (defaults to \code{FALSE}), which indicates whether the output should
+be treated as a percentage.}
 }
 \value{
 The estimate with formated upper, and lower confidence/credible
@@ -57,6 +60,12 @@ pretty_ci(est, string = TRUE)
 
 est <- data.frame(est = c(1,2), lci = c(0, 1), uci = c(2, 3))
 pretty_ci(est, string = TRUE)
+
+est <- 98
+lci <- 96
+uci <- 99
+
+pretty_ci(est, lci, uci, percentage = TRUE)
 }
 \seealso{
 pretty_round pretty_percentage

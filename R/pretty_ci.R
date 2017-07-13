@@ -9,6 +9,8 @@
 #' to \code{est} (formatted as est, lci, uci) or seperately to \code{est}, \code{lci} and \code{uci}. Supports  single estimates or a list/dataframe.
 #' @param sep A character vector indicating the seperator used between the upper and
 #' lower confidence/credible intervals. The default is ' to '.
+#' @param percentage A logical (defaults to \code{FALSE}), which indicates whether the output should
+#' be treated as a percentage.
 #' @param inline Logical operator indicating whether an explanatory note is required.
 #' @inheritParams pretty_round
 #' @inheritParams pretty_inline_ci
@@ -41,13 +43,25 @@
 #'
 #'est <- data.frame(est = c(1,2), lci = c(0, 1), uci = c(2, 3))
 #'pretty_ci(est, string = TRUE)
+#'
+#'est <- 98
+#'lci <- 96
+#'uci <- 99
+#'
+#'pretty_ci(est, lci, uci, percentage = TRUE)
 pretty_ci <- function(est, lci, uci, string = FALSE, sep = " to ", digits = 2,
-                      inline = FALSE, note = "95% CI") {
+                      inline = FALSE, note = "95% CI ", percentage = FALSE) {
 
   if (string) {
     lci <- unlist(est[2])
     uci <- unlist(est[3])
     est <- unlist(est[1])
+  }
+
+  if (percentage) {
+    fill <- "%"
+  }else {
+    fill <- ""
   }
 
   df <- data_frame(est, lci, uci)
@@ -56,7 +70,7 @@ pretty_ci <- function(est, lci, uci, string = FALSE, sep = " to ", digits = 2,
             mutate(est = pretty_round(est, digits = digits),
                    lci = pretty_round(lci, digits = digits),
                    uci = pretty_round(uci, digits = digits)) %>%
-              mutate(ci = paste0(est, " (", lci, sep, uci, ")"))
+              mutate(ci = paste0(est, fill, " (", lci, fill, sep, uci, fill, ")"))
 
   if (inline) {
     df$ci <-  pretty_inline_ci(df$ci, note = note)

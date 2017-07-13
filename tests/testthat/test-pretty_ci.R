@@ -66,3 +66,9 @@ test_that("pretty_ci can be used in a dplyr workflow with the estimate as a stri
   expect_equal(df_output, df_int$ci)
 })
 
+
+test_that("pretty_ci can be used to produe a percentage", {
+  expect_equal("84% (82% to 96%)",
+               pretty_ci(est = 84, lci = 82, uci = 96,
+                         digits = 0, sep = " to ", percentage = TRUE))
+})

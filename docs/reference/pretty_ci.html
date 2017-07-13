@@ -85,7 +85,7 @@ intervals, round with trailing zeros and format into the required journal style.
     
 
     <pre class="usage"><span class='fu'>pretty_ci</span>(<span class='no'>est</span>, <span class='no'>lci</span>, <span class='no'>uci</span>, <span class='kw'>string</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>" to "</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>note</span> <span class='kw'>=</span> <span class='st'>"95% CI"</span>)</pre>
+  <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>note</span> <span class='kw'>=</span> <span class='st'>"95% CI "</span>, <span class='kw'>percentage</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -124,6 +124,11 @@ lower confidence/credible intervals. The default is ' to '.</p></td>
       <th>note</th>
       <td><p>A character vector indicating the explanatory note to be used.</p></td>
     </tr>
+    <tr>
+      <th>percentage</th>
+      <td><p>A logical (defaults to <code>FALSE</code>), which indicates whether the output should
+be treated as a percentage.</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -161,7 +166,12 @@ intervals as a character vector.</p>
 <span class='no'>est</span> <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='fl'>0</span>, -<span class='fl'>1</span>, <span class='fl'>1</span>)
 <span class='fu'>pretty_ci</span>(<span class='no'>est</span>, <span class='kw'>string</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "0.00 (-1.00 to 1.00)"</div><div class='input'>
 <span class='no'>est</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(<span class='kw'>est</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1</span>,<span class='fl'>2</span>), <span class='kw'>lci</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>, <span class='fl'>1</span>), <span class='kw'>uci</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>2</span>, <span class='fl'>3</span>))
-<span class='fu'>pretty_ci</span>(<span class='no'>est</span>, <span class='kw'>string</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "1.00 (0.00 to 2.00)" "2.00 (1.00 to 3.00)"</div></pre>
+<span class='fu'>pretty_ci</span>(<span class='no'>est</span>, <span class='kw'>string</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "1.00 (0.00 to 2.00)" "2.00 (1.00 to 3.00)"</div><div class='input'>
+<span class='no'>est</span> <span class='kw'>&lt;-</span> <span class='fl'>98</span>
+<span class='no'>lci</span> <span class='kw'>&lt;-</span> <span class='fl'>96</span>
+<span class='no'>uci</span> <span class='kw'>&lt;-</span> <span class='fl'>99</span>
+
+<span class='fu'>pretty_ci</span>(<span class='no'>est</span>, <span class='no'>lci</span>, <span class='no'>uci</span>, <span class='kw'>percentage</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1] "98.00% (96.00% to 99.00%)"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
