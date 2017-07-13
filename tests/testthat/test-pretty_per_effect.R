@@ -1,23 +1,5 @@
 context("pretty_per_effect")
 
-
-#' est <- 1.2
-#' lci <- 1.1
-#' uci <- 1.3
-#'
-#' ## As unformated effects
-#' pretty_per_effect(est, lci, uci)
-#'
-#' ## As formated effects
-#'
-#' x <- pretty_ci(est, lci, uci, inline = TRUE)
-#' pretty_per_effect(x, string = TRUE, inline = TRUE)
-#'
-#' ## For a decrease
-#' pretty_per_effect(x, string = TRUE, inline = TRUE, effect_direct = "decrease")
-
-
-
 test_that("pretty_per_effect produces a publishable percentage effect", {
   expect_equal("2% (1% to 3%)",
                pretty_per_effect(1.02, lci = 1.01, uci = 1.03, digits = 0, sep = " to "))
@@ -43,3 +25,7 @@ test_that("pretty_per_effect can handle decreasing percentage", {
                pretty_per_effect(x, string = TRUE, inline = TRUE,
                                  effect_direct = "decrease"))
 })
+
+testh_that("pretty_per_effect fails when effect_direct is mispecified", {
+  expect_error(pretty_per_effect(x, string = TRUE, effect_direct = "nonsense")
+}
