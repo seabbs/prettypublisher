@@ -26,6 +26,6 @@ test_that("pretty_per_effect can handle decreasing percentage", {
                                  effect_direct = "decrease"))
 })
 
-testh_that("pretty_per_effect fails when effect_direct is mispecified", {
-  expect_error(pretty_per_effect(x, string = TRUE, effect_direct = "nonsense")
-}
+test_that("pretty_per_effect fails when effect_direct is mispecified", {
+  expect_error(pretty_per_effect(x, string = TRUE, effect_direct = "nonsense"))
+})
