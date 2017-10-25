@@ -23,7 +23,8 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-
+  
+  
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -51,10 +52,25 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="../index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/my-vignette.html">Vignette Title</a>
+    </li>
+  </ul>
 </li>
       </ul>
       
@@ -154,13 +170,15 @@ intervals as a character vector.</p>
 #&gt; [5] "21221.0 (12321.0-30122.0)" "403.0 (200.0-500.0)"      </div><div class='input'>
 <span class='co'>## Use in a dplyr workflow</span>
 <span class='fu'>library</span>(<span class='no'>dplyr</span>)</div><div class='output co'>#&gt; <span class='message'></span>
-#&gt; <span class='message'>Attaching package: ‘dplyr’</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:stats’:</span>
+#&gt; <span class='message'>Attaching package: ‘dplyr’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:testthat’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    matches</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:stats’:</span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>    filter, lag</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:base’:</span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>    intersect, setdiff, setequal, union</span></div><div class='input'>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>data_frame</span>(<span class='kw'>est</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>,<span class='fl'>1</span>), <span class='kw'>lci</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>, <span class='fl'>2</span>), <span class='kw'>uci</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1</span>, <span class='fl'>4</span>))
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>x</span> <span class='kw'>%&gt;%</span> <span class='fu'>mutate</span>(<span class='kw'>ci</span> <span class='kw'>=</span> <span class='no'>est</span> <span class='kw'>%&gt;%</span> <span class='fu'>pretty_ci</span>(<span class='kw'>lci</span> <span class='kw'>=</span> <span class='no'>lci</span>, <span class='kw'>uci</span> <span class='kw'>=</span> <span class='no'>uci</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>' by '</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>0</span>))
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='http://dplyr.tidyverse.org/reference/reexports.html'>data_frame</a></span>(<span class='kw'>est</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>,<span class='fl'>1</span>), <span class='kw'>lci</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>, <span class='fl'>2</span>), <span class='kw'>uci</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1</span>, <span class='fl'>4</span>))
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>x</span> <span class='kw'>%&gt;%</span> <span class='fu'><a href='http://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(<span class='kw'>ci</span> <span class='kw'>=</span> <span class='no'>est</span> <span class='kw'>%&gt;%</span> <span class='fu'>pretty_ci</span>(<span class='kw'>lci</span> <span class='kw'>=</span> <span class='no'>lci</span>, <span class='kw'>uci</span> <span class='kw'>=</span> <span class='no'>uci</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>' by '</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>0</span>))
 
 <span class='co'>## Passing values as a single string</span>
 <span class='no'>est</span> <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='fl'>0</span>, -<span class='fl'>1</span>, <span class='fl'>1</span>)
