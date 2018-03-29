@@ -11,7 +11,7 @@ test_that("pretty_per_effect can handle a single formated string", {
   uci <- 1.3
   x <- pretty_ci(est, lci, uci, inline = TRUE)
 
-  expect_equal("20% (95%  CI 10% to 30%)",
+  expect_equal("20% (95% CI 10% to 30%)",
                pretty_per_effect(x, string = TRUE, inline = TRUE))
 })
 
@@ -21,7 +21,7 @@ test_that("pretty_per_effect can handle decreasing percentage", {
   uci <- 1.3
   x <- pretty_ci(est, lci, uci, inline = TRUE)
 
-  expect_equal("-20% (95%  CI -30% to -10%)",
+  expect_equal("-20% (95% CI -30% to -10%)",
                pretty_per_effect(x, string = TRUE, inline = TRUE,
                                  effect_direct = "decrease"))
 })
