@@ -33,7 +33,7 @@
 #' ## For a decrease
 #' pretty_per_effect(x, string = TRUE, inline = TRUE, effect_direct = "decrease")
 pretty_per_effect <- function(est = NULL, lci = NULL, uci = NULL, string = FALSE, sep = " to ",
-                              note = "95%  CI ", digits = 0, inline = FALSE, percentage = TRUE,
+                              note = "95% CI ", digits = 0, inline = FALSE, percentage = TRUE,
                               effect_direct = "increase", ...) {
 if (string) {
   est <- suppressWarnings(est %>%
