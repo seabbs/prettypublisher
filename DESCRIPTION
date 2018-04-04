@@ -1,6 +1,6 @@
 Package: prettypublisher
 Type: Package
-Version: 0.2.1.9000
+Version: 0.3.0
 Title: Formatting Functions for Publishable R Markdown Documents
 Authors@R: c(person("Sam Abbott", role = c("aut", "cre"),
                      email = "contact@samabbott.co.uk"))
@@ -14,7 +14,8 @@ Imports: magrittr,
     purrr,
     captioner
 Suggests: testthat,
-    rmarkdown
+    rmarkdown,
+    broom
 VignetteBuilder: knitr
 URL: http://www.samabbott.co.uk/prettypublisher, 
      https://github.com/seabbs/prettypublisher

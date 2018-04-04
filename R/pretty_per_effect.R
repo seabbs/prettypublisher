@@ -13,9 +13,9 @@
 #' @seealso pretty_ci
 #' @return A pretty formated percentage with confidence intervals
 #' @export
-#' @import magrittr
 #' @importFrom stringr str_split
 #' @importFrom stats na.omit
+#' @importFrom purrr map map_chr transpose
 #' @examples
 #'
 #' est <- 1.2
@@ -32,9 +32,17 @@
 #'
 #' ## For a decrease
 #' pretty_per_effect(x, string = TRUE, inline = TRUE, effect_direct = "decrease")
+#'
+#' ## Vectorised (as a string)
+#' est <- c(est, 1.1)
+#' lci <- c(lci, 1)
+#' uci <- c(uci, 1.2)
+#'
+#' pretty_per_effect(est, lci, uci)
 pretty_per_effect <- function(est = NULL, lci = NULL, uci = NULL, string = FALSE, sep = " to ",
                               note = "95% CI ", digits = 0, inline = FALSE, percentage = TRUE,
                               effect_direct = "increase", ...) {
+
 if (string) {
   est <- suppressWarnings(est %>%
     str_split(pattern = "\\)") %>%
@@ -44,24 +52,26 @@ if (string) {
     as.numeric %>%
     na.omit)
 }else {
-  est <- c(est, lci, uci)
+  est <- list(est, lci, uci)
 }
 
 
   if (effect_direct %in% "increase") {
-    adjusted_per <- est - 1
+    adjusted_per <- map(est,  ~ . - 1)
   }else if (effect_direct %in% "decrease") {
-    adjusted_per <- 1 - est
-    adjusted_per <- c(adjusted_per[1], adjusted_per[3], adjusted_per[2])
+    adjusted_per <- map(est, ~ 1 - .)
+    adjusted_per <- c(adjusted_per[[1]], adjusted_per[[3]], adjusted_per[[2]])
   }else{
     stop("effect_direct must be either increase or decrease.
          This specifies the direction of the effect")
   }
 
-  adjusted_per <- adjusted_per * 100
-  adjusted_per <- pretty_ci(adjusted_per, string = TRUE,
+  adjusted_per <- map(adjusted_per, ~ . *  100)
+  adjusted_per <- transpose(adjusted_per)
+  adjusted_per <- map_chr(adjusted_per, ~pretty_ci(unlist(.), string = TRUE,
                             sep = sep, note = note, digits = digits, inline = inline,
                             percentage = percentage, ...)
+  )
 
   return(adjusted_per)
 }

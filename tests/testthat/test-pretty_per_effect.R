@@ -29,3 +29,11 @@ test_that("pretty_per_effect can handle decreasing percentage", {
 test_that("pretty_per_effect fails when effect_direct is mispecified", {
   expect_error(pretty_per_effect(x, string = TRUE, effect_direct = "nonsense"))
 })
+
+test_that("pretty_per_effect can handle vectorised input", {
+  est <- c(1.2, 1.1)
+  lci <- c(1.1, 1)
+  uci <- c(1.3, 1.2)
+
+  expect_equal(pretty_per_effect(est, lci, uci), c("20% (10% to 30%)", "10% (0% to 20%)"))
+})

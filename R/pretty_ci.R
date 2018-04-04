@@ -18,7 +18,6 @@
 #' intervals as a character vector.
 #' @export
 #' @importFrom dplyr data_frame mutate_all mutate funs
-#' @import magrittr
 #' @seealso  pretty_round pretty_percentage
 #' @examples
 #' ## Formating a single confidence interval

@@ -19,7 +19,6 @@
 #' @importFrom purrr map
 #' @importFrom pander pander
 #' @importFrom knitr kable
-#' @import magrittr
 #' @return A markdown table
 #' @export
 #' @examples

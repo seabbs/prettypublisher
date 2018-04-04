@@ -5,7 +5,7 @@
 \title{A Function to Convert Effect Estimates into Percentage Changes}
 \usage{
 pretty_per_effect(est = NULL, lci = NULL, uci = NULL, string = FALSE,
-  sep = " to ", note = "95\%  CI ", digits = 0, inline = FALSE,
+  sep = " to ", note = "95\% CI ", digits = 0, inline = FALSE,
   percentage = TRUE, effect_direct = "increase", ...)
 }
 \arguments{
@@ -60,6 +60,13 @@ pretty_per_effect(x, string = TRUE, inline = TRUE)
 
 ## For a decrease
 pretty_per_effect(x, string = TRUE, inline = TRUE, effect_direct = "decrease")
+
+## Vectorised (as a string)
+est <- c(est, 1.1)
+lci <- c(lci, 1)
+uci <- c(uci, 1.2)
+
+pretty_per_effect(est, lci, uci)
 }
 \seealso{
 pretty_ci

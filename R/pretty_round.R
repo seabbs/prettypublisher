@@ -10,7 +10,6 @@
 #' @return A rounded numeric vector formatted as a character vector with trialing zeros.
 #' @export
 #' @importFrom stringr str_trim
-#' @import magrittr
 #' @seealso \code{\link[base]{format}}, and \code{\link[base]{round}} for additional information
 #' @examples
 #' ## Rounding a single number

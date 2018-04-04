@@ -1,0 +1,43 @@
+title: Tools for producing publication ready documents
+url: https://samabbott.co.uk/prettypublisher/
+template:
+  params:
+    bootswatch: flatly
+
+navbar:
+  type: inverse
+  left:
+    - text: "Home"
+      href: index.html
+
+  right:
+    - icon: fa-file-code-o
+      text: "Functions"
+      href: reference/index.html
+    - text: News
+      href: news/index.html
+    - icon: fa-github fa-lg
+      text: "Github"
+      href: https://github.com/seabbs/prettypublisher
+
+reference:
+    - title: Reporting
+      desc: Functions to speed up the formating of commonly reported measures
+      contents:
+      - pretty_ci
+      - pretty_inline_ci
+      - pretty_per_effect
+      - pretty_percentage
+      - pretty_round
+    - title: Tables
+      desc: Wrapper functions for table formating.
+      contents:
+      - pretty_table
+    - title: Referencing
+      desc:  Wrapper functions around captioner functionality.
+      contents:
+      - pretty_captioner
+      - pretty_figref
+      - pretty_tabref
+      - pretty_supfigref
+      - pretty_suptabref

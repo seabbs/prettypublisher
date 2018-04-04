@@ -4,7 +4,6 @@
 #' @param string A character vector as formated by \code{\link[prettypublisher]{pretty_ci}}.
 #' @param note A character vector indicating the explanatory note to be used.
 #' @importFrom stringr str_replace
-#' @import magrittr
 #' @seealso pretty_ci
 #' @return An estimate with formated CI's for use inline within a document.
 #' @export
