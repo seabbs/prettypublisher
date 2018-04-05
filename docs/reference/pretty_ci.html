@@ -101,7 +101,7 @@ intervals, round with trailing zeros and format into the required journal style.
     <div class="page-header">
     <h1>Format an estimate, lower and upper confidence intervals into a single character string</h1>
     <small>Source: <a href='https://github.com/seabbs/prettypublisher/blob/master/R/pretty_ci.R'><code>R/pretty_ci.R</code></a></small>
-    <p class="hidden name"><code>pretty_ci.Rd</code></p>
+    <div class="hidden name"><code>pretty_ci.Rd</code></div>
     </div>
 
     
@@ -178,8 +178,14 @@ intervals as a character vector.</p>
 #&gt; [3] "100.0 (50.0-200.0)"        "300.0 (100.0-400.0)"      
 #&gt; [5] "21221.0 (12321.0-30122.0)" "403.0 (200.0-500.0)"      </div><div class='input'>
 <span class='co'>## Use in a dplyr workflow</span>
-<span class='fu'>library</span>(<span class='no'>dplyr</span>)
-
+<span class='fu'>library</span>(<span class='no'>dplyr</span>)</div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; <span class='message'>Attaching package: ‘dplyr’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:testthat’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    matches</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:stats’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    filter, lag</span></div><div class='output co'>#&gt; <span class='message'>The following objects are masked from ‘package:base’:</span>
+#&gt; <span class='message'></span>
+#&gt; <span class='message'>    intersect, setdiff, setequal, union</span></div><div class='input'>
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='http://dplyr.tidyverse.org/reference/reexports.html'>data_frame</a></span>(<span class='kw'>est</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>,<span class='fl'>1</span>), <span class='kw'>lci</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>, <span class='fl'>2</span>), <span class='kw'>uci</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1</span>, <span class='fl'>4</span>))
 <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>x</span> <span class='kw'>%&gt;%</span> <span class='fu'><a href='http://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span>(<span class='kw'>ci</span> <span class='kw'>=</span> <span class='no'>est</span> <span class='kw'>%&gt;%</span> <span class='fu'>pretty_ci</span>(<span class='kw'>lci</span> <span class='kw'>=</span> <span class='no'>lci</span>, <span class='kw'>uci</span> <span class='kw'>=</span> <span class='no'>uci</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>' by '</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>0</span>))
 

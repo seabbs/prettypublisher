@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 
 # prettypublisher
 
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/prettypublisher)](https://cran.r-project.org/package=prettypublisher)
+[![develVersion](https://img.shields.io/badge/devel%20version-0.3.0-blue.svg?style=flat)](https://github.com/seabbs/prettypublisher)
 [![Build Status](https://travis-ci.org/seabbs/prettypublisher.svg?branch=master)](https://travis-ci.org/seabbs/prettypublisher)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/seabbs/prettypublisher?branch=master&svg=true)](https://ci.appveyor.com/project/seabbs/prettypublisher)
 [![codecov](https://codecov.io/gh/seabbs/prettypublisher/branch/master/graph/badge.svg)](https://codecov.io/gh/seabbs/prettypublisher)

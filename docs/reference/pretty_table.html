@@ -102,7 +102,7 @@ has been knit to word." />
     <div class="page-header">
     <h1>Wrapper function for pretty tables</h1>
     <small>Source: <a href='https://github.com/seabbs/prettypublisher/blob/master/R/pretty_table.R'><code>R/pretty_table.R</code></a></small>
-    <p class="hidden name"><code>pretty_table.Rd</code></p>
+    <div class="hidden name"><code>pretty_table.Rd</code></div>
     </div>
 
     
@@ -162,7 +162,7 @@ and <code><a href='http://www.rdocumentation.org/packages/knitr/topics/kable'>ka
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## A simple table</span>
-<span class='fu'>pretty_table</span>(<span class='no'>iris</span>[<span class='fl'>1</span>:<span class='fl'>5</span>, <span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='output co'>#&gt; 
+<span class='fu'>pretty_table</span>(<span class='no'>iris</span>[<span class='fl'>1</span>:<span class='fl'>5</span>, <span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='output co'>#&gt; <span class='message'>Initialising captioning function: tabref</span></div><div class='output co'>#&gt; 
 #&gt; -------------------------------------------------------------------
 #&gt;  Sepal.Length   Sepal.Width   Petal.Length   Petal.Width   Species 
 #&gt; -------------- ------------- -------------- ------------- ---------
@@ -177,7 +177,7 @@ and <code><a href='http://www.rdocumentation.org/packages/knitr/topics/kable'>ka
 #&gt;       5             3.6           1.4            0.2       setosa  
 #&gt; -------------------------------------------------------------------
 #&gt; 
-#&gt; Table: Table 3: 
+#&gt; Table: Table 1: 
 #&gt; </div><div class='input'>
 <span class='co'>## Renaming columns</span>
 <span class='fu'>pretty_table</span>(<span class='no'>iris</span>[<span class='fl'>1</span>:<span class='fl'>5</span>, <span class='fl'>1</span>:<span class='fl'>5</span>], <span class='kw'>col_names</span> <span class='kw'>=</span> <span class='fu'>as.character</span>(<span class='fl'>1</span>:<span class='fl'>5</span>))</div><div class='output co'>#&gt; 
@@ -195,7 +195,7 @@ and <code><a href='http://www.rdocumentation.org/packages/knitr/topics/kable'>ka
 #&gt;   5    3.6   1.4   0.2   setosa 
 #&gt; --------------------------------
 #&gt; 
-#&gt; Table: Table 4: 
+#&gt; Table: Table 2: 
 #&gt; </div><div class='input'>
 <span class='co'>## Adding a footer</span>
 <span class='fu'>pretty_table</span>(<span class='no'>iris</span>[<span class='fl'>1</span>:<span class='fl'>5</span>, <span class='fl'>1</span>:<span class='fl'>5</span>], <span class='kw'>footer</span> <span class='kw'>=</span> <span class='st'>'Example footer'</span>)</div><div class='output co'>#&gt; 
@@ -215,7 +215,7 @@ and <code><a href='http://www.rdocumentation.org/packages/knitr/topics/kable'>ka
 #&gt;  Example footer                                                      
 #&gt; ---------------------------------------------------------------------
 #&gt; 
-#&gt; Table: Table 5: 
+#&gt; Table: Table 3: 
 #&gt; </div><div class='input'>
 <span class='co'>## Changing to a kable table</span>
 <span class='fu'>library</span>(<span class='no'>knitr</span>)
@@ -241,7 +241,7 @@ and <code><a href='http://www.rdocumentation.org/packages/knitr/topics/kable'>ka
 #&gt;    a        3    
 #&gt; -----------------
 #&gt; 
-#&gt; Table: Table 7: 
+#&gt; Table: Table 5: 
 #&gt; </div><div class='input'>
 </div></pre>
   </div>
