@@ -40,8 +40,8 @@
 #'
 #' pretty_per_effect(est, lci, uci)
 pretty_per_effect <- function(est = NULL, lci = NULL, uci = NULL, string = FALSE, sep = " to ",
-                              note = "95% CI ", digits = 0, inline = FALSE, percentage = TRUE,
-                              effect_direct = "increase", ...) {
+                              note = "95% CI ", replace_bracket = TRUE, digits = 0, inline = FALSE,
+                              percentage = TRUE, effect_direct = "increase", ...) {
 
 if (string) {
   est <- suppressWarnings(est %>%
@@ -69,7 +69,8 @@ if (string) {
   adjusted_per <- map(adjusted_per, ~ . *  100)
   adjusted_per <- transpose(adjusted_per)
   adjusted_per <- map_chr(adjusted_per, ~pretty_ci(unlist(.), string = TRUE,
-                            sep = sep, note = note, digits = digits, inline = inline,
+                            sep = sep, note = note, replace_bracket = replace_bracket,
+                            digits = digits, inline = inline,
                             percentage = percentage, ...)
   )
 

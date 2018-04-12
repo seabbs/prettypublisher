@@ -49,7 +49,8 @@
 #'
 #'pretty_ci(est, lci, uci, percentage = TRUE)
 pretty_ci <- function(est, lci, uci, string = FALSE, sep = " to ", digits = 2,
-                      inline = FALSE, note = "95% CI ", percentage = FALSE) {
+                      inline = FALSE, note = "95% CI ", replace_bracket = TRUE,
+                      percentage = FALSE) {
 
   if (string) {
     lci <- unlist(est[2])

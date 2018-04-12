@@ -3,6 +3,7 @@
 ## Features
 
 - `pretty_per_effect` can now handle vectorised input.
+- `pretty_inline_ci` and associated functions can optionally not replace the leading bracket.
 ## Package
 
 * Updated and customised pkgdown site

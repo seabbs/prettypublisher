@@ -109,7 +109,7 @@ and adds a user specified explanatory note; to be used inline." />
 and adds a user specified explanatory note; to be used inline.</p>
     
 
-    <pre class="usage"><span class='fu'>pretty_inline_ci</span>(<span class='no'>string</span>, <span class='kw'>note</span> <span class='kw'>=</span> <span class='st'>"95% CI "</span>)</pre>
+    <pre class="usage"><span class='fu'>pretty_inline_ci</span>(<span class='no'>string</span>, <span class='kw'>note</span> <span class='kw'>=</span> <span class='st'>"95% CI "</span>, <span class='kw'>replace_bracket</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -121,6 +121,11 @@ and adds a user specified explanatory note; to be used inline.</p>
     <tr>
       <th>note</th>
       <td><p>A character vector indicating the explanatory note to be used.</p></td>
+    </tr>
+    <tr>
+      <th>replace_bracket</th>
+      <td><p>Logical, defaults to <code>TRUE</code>. Should the leading bracket be automatically
+be reinserted in front of the custom note supplied by <code>note</code>.</p></td>
     </tr>
     </table>
     
@@ -146,7 +151,11 @@ and adds a user specified explanatory note; to be used inline.</p>
 <span class='no'>formated_ci</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='pretty_ci.html'>pretty_ci</a></span>(<span class='no'>est</span>, <span class='no'>lci</span>, <span class='no'>uci</span>, <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>'-'</span>)
 <span class='fu'>pretty_inline_ci</span>(<span class='no'>formated_ci</span>)</div><div class='output co'>#&gt; [1] "1.00 (95% CI 0.00-100.00)"    "2.00 (95% CI -19.00-30.00)"  
 #&gt; [3] "3.00 (95% CI -209.00-40.00)"  "10.00 (95% CI -100.00-19.00)"</div><div class='input'>
-</div></pre>
+<span class='co'>## Add a note before the braket</span>
+<span class='fu'>pretty_inline_ci</span>(<span class='no'>formated_ci</span>, <span class='kw'>note</span> <span class='kw'>=</span> <span class='st'>" per 100,000 (95% CI "</span>, <span class='kw'>replace_bracket</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] "1.00  per 100,000 (95% CI 0.00-100.00)"   
+#&gt; [2] "2.00  per 100,000 (95% CI -19.00-30.00)"  
+#&gt; [3] "3.00  per 100,000 (95% CI -209.00-40.00)" 
+#&gt; [4] "10.00  per 100,000 (95% CI -100.00-19.00)"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

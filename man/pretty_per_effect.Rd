@@ -5,8 +5,8 @@
 \title{A Function to Convert Effect Estimates into Percentage Changes}
 \usage{
 pretty_per_effect(est = NULL, lci = NULL, uci = NULL, string = FALSE,
-  sep = " to ", note = "95\% CI ", digits = 0, inline = FALSE,
-  percentage = TRUE, effect_direct = "increase", ...)
+  sep = " to ", note = "95\% CI ", replace_bracket = TRUE, digits = 0,
+  inline = FALSE, percentage = TRUE, effect_direct = "increase", ...)
 }
 \arguments{
 \item{est}{A numeric or character vector of estimates.}
@@ -22,6 +22,9 @@ to \code{est} (formatted as est, lci, uci) or seperately to \code{est}, \code{lc
 lower confidence/credible intervals. The default is ' to '.}
 
 \item{note}{A character vector indicating the explanatory note to be used.}
+
+\item{replace_bracket}{Logical, defaults to \code{TRUE}. Should the leading bracket be automatically
+be reinserted in front of the custom note supplied by \code{note}.}
 
 \item{digits}{Integer indicating the number of decimal places to be used.}
 

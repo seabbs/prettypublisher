@@ -4,12 +4,15 @@
 \alias{pretty_inline_ci}
 \title{Reformat an estimate, with lower/upper confidence/credible intervals with an explanatory note}
 \usage{
-pretty_inline_ci(string, note = "95\% CI ")
+pretty_inline_ci(string, note = "95\% CI ", replace_bracket = TRUE)
 }
 \arguments{
 \item{string}{A character vector as formated by \code{\link[prettypublisher]{pretty_ci}}.}
 
 \item{note}{A character vector indicating the explanatory note to be used.}
+
+\item{replace_bracket}{Logical, defaults to \code{TRUE}. Should the leading bracket be automatically
+be reinserted in front of the custom note supplied by \code{note}.}
 }
 \value{
 An estimate with formated CI's for use inline within a document.
@@ -33,6 +36,8 @@ uci <- c(100, 30, 40, 19)
 formated_ci <- pretty_ci(est, lci, uci, sep = '-')
 pretty_inline_ci(formated_ci)
 
+## Add a note before the braket
+pretty_inline_ci(formated_ci, note = " per 100,000 (95\% CI ", replace_bracket = FALSE)
 }
 \seealso{
 pretty_ci

@@ -114,8 +114,8 @@ formatted effect size into a pretty formated percentage.</p>
     
 
     <pre class="usage"><span class='fu'>pretty_per_effect</span>(<span class='kw'>est</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>lci</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>uci</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>string</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>" to "</span>, <span class='kw'>note</span> <span class='kw'>=</span> <span class='st'>"95% CI "</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>percentage</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>effect_direct</span> <span class='kw'>=</span> <span class='st'>"increase"</span>, <span class='no'>...</span>)</pre>
+  <span class='kw'>sep</span> <span class='kw'>=</span> <span class='st'>" to "</span>, <span class='kw'>note</span> <span class='kw'>=</span> <span class='st'>"95% CI "</span>, <span class='kw'>replace_bracket</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>digits</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>inline</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>percentage</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>effect_direct</span> <span class='kw'>=</span> <span class='st'>"increase"</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,6 +145,11 @@ lower confidence/credible intervals. The default is ' to '.</p></td>
     <tr>
       <th>note</th>
       <td><p>A character vector indicating the explanatory note to be used.</p></td>
+    </tr>
+    <tr>
+      <th>replace_bracket</th>
+      <td><p>Logical, defaults to <code>TRUE</code>. Should the leading bracket be automatically
+be reinserted in front of the custom note supplied by <code>note</code>.</p></td>
     </tr>
     <tr>
       <th>digits</th>

@@ -5,7 +5,8 @@
 \title{Format an estimate, lower and upper confidence intervals into a single character string}
 \usage{
 pretty_ci(est, lci, uci, string = FALSE, sep = " to ", digits = 2,
-  inline = FALSE, note = "95\% CI ", percentage = FALSE)
+  inline = FALSE, note = "95\% CI ", replace_bracket = TRUE,
+  percentage = FALSE)
 }
 \arguments{
 \item{est}{A numeric or character vector of estimates.}
@@ -25,6 +26,9 @@ lower confidence/credible intervals. The default is ' to '.}
 \item{inline}{Logical operator indicating whether an explanatory note is required.}
 
 \item{note}{A character vector indicating the explanatory note to be used.}
+
+\item{replace_bracket}{Logical, defaults to \code{TRUE}. Should the leading bracket be automatically
+be reinserted in front of the custom note supplied by \code{note}.}
 
 \item{percentage}{A logical (defaults to \code{FALSE}), which indicates whether the output should
 be treated as a percentage.}
