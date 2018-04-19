@@ -7,6 +7,9 @@
 #' is unformated into a pretty formated percentage or it can convert a \code{\link[prettypublisher]{pretty_ci}}
 #' formatted effect size into a pretty formated percentage.
 #' @inheritParams pretty_ci
+#' @param string Logical, defaults to \code{FALSE}. Is the input a string as formated by
+#' \code{pretty_ci}? If \code{TRUE} Then this function is not vectorised. Will attempt to
+#' split based on the supplied sep criteria as well as several common splitting characters.
 #' @param effect_direct A character string indicating the direction of the percentage.
 #' Can be specified as "increase" or "decrease" (defaults to "increase").
 #' @param ... Pass additional arguements to \code{\link[prettypublisher]{pretty_ci}}
@@ -33,6 +36,15 @@
 #' ## For a decrease
 #' pretty_per_effect(x, string = TRUE, inline = TRUE, effect_direct = "decrease")
 #'
+#' ## For difference seperations between strings (vectorised)
+#' x <- pretty_ci(est, lci, uci, inline = TRUE, sep = ", ")
+#' x <- c(x, x)
+#'
+#' pretty_per_effect(x, string = TRUE, inline = TRUE)
+#'
+#' ## For a decrease
+#' pretty_per_effect(x, string = TRUE, inline = TRUE, effect_direct = "decrease")
+#'
 #' ## Vectorised (as a string)
 #' est <- c(est, 1.1)
 #' lci <- c(lci, 1)
@@ -44,13 +56,24 @@ pretty_per_effect <- function(est = NULL, lci = NULL, uci = NULL, string = FALSE
                               percentage = TRUE, effect_direct = "increase", ...) {
 
 if (string) {
-  est <- suppressWarnings(est %>%
-    str_split(pattern = "\\)") %>%
-    unlist %>%
-    str_split(pattern = " ") %>%
-    unlist %>%
-    as.numeric %>%
-    na.omit)
+  est <- suppressWarnings(
+    map(est,
+             ~str_split(., pattern = "\\)") %>%
+               unlist %>%
+               str_split(pattern = sep) %>%
+               unlist %>%
+               str_split(pattern = " ") %>%
+               unlist %>%
+               str_split(pattern=",") %>%
+               unlist %>%
+               str_split(pattern="-") %>%
+               unlist %>%
+               as.numeric %>%
+               map(na.omit) %>%
+               unlist) %>%
+    transpose %>%
+    map(unlist)
+  )
 }else {
   est <- list(est, lci, uci)
 }

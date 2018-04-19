@@ -37,3 +37,17 @@ test_that("pretty_per_effect can handle vectorised input", {
 
   expect_equal(pretty_per_effect(est, lci, uci), c("20% (10% to 30%)", "10% (0% to 20%)"))
 })
+
+test_that("pretty_per_effect can handle specified seperators", {
+  est <- c(1.2, 1.1)
+  lci <- c(1.1, 1)
+  uci <- c(1.3, 1.2)
+
+  x <- pretty_ci(est, lci, uci, inline = TRUE, sep = ", ")
+
+  expect_equal(pretty_per_effect(x[1], string = TRUE, inline = TRUE, sep = ", "),
+               "20% (95% CI 10%, 30%)")
+  expect_equal(pretty_per_effect(x, string = TRUE, inline = TRUE, sep = ", "),
+               c("20% (95% CI 10%, 30%)",
+                 "10% (95% CI 0%, 20%)"))
+})

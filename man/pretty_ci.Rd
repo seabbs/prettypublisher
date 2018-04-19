@@ -16,7 +16,8 @@ pretty_ci(est, lci, uci, string = FALSE, sep = " to ", digits = 2,
 \item{uci}{A numeric or character vector of upper confidence/credible intervals.}
 
 \item{string}{A logicial (defaults to \code{FALSE}) indicating if the estimates are being passed as a string
-to \code{est} (formatted as est, lci, uci) or seperately to \code{est}, \code{lci} and \code{uci}. Supports  single estimates or a list/dataframe.}
+to \code{est} (formatted as est, lci, uci) or seperately to \code{est}, \code{lci} and \code{uci}.
+Supports  single estimates or a list/dataframe.}
 
 \item{sep}{A character vector indicating the seperator used between the upper and
 lower confidence/credible intervals. The default is ' to '.}

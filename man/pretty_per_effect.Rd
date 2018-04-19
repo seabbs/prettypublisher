@@ -15,8 +15,9 @@ pretty_per_effect(est = NULL, lci = NULL, uci = NULL, string = FALSE,
 
 \item{uci}{A numeric or character vector of upper confidence/credible intervals.}
 
-\item{string}{A logicial (defaults to \code{FALSE}) indicating if the estimates are being passed as a string
-to \code{est} (formatted as est, lci, uci) or seperately to \code{est}, \code{lci} and \code{uci}. Supports  single estimates or a list/dataframe.}
+\item{string}{Logical, defaults to \code{FALSE}. Is the input a string as formated by
+\code{pretty_ci}? If \code{TRUE} Then this function is not vectorised. Will attempt to
+split based on the supplied sep criteria as well as several common splitting characters.}
 
 \item{sep}{A character vector indicating the seperator used between the upper and
 lower confidence/credible intervals. The default is ' to '.}
@@ -59,6 +60,15 @@ pretty_per_effect(est, lci, uci)
 ## As formated effects
 
 x <- pretty_ci(est, lci, uci, inline = TRUE)
+pretty_per_effect(x, string = TRUE, inline = TRUE)
+
+## For a decrease
+pretty_per_effect(x, string = TRUE, inline = TRUE, effect_direct = "decrease")
+
+## For difference seperations between strings (vectorised)
+x <- pretty_ci(est, lci, uci, inline = TRUE, sep = ", ")
+x <- c(x, x)
+
 pretty_per_effect(x, string = TRUE, inline = TRUE)
 
 ## For a decrease
