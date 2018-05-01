@@ -74,7 +74,7 @@ pretty_ci <- function(est, lci, uci, string = FALSE, sep = " to ", digits = 2,
               mutate(ci = paste0(est, fill, " (", lci, fill, sep, uci, fill, ")"))
 
   if (inline) {
-    df$ci <-  pretty_inline_ci(df$ci, note = note)
+    df$ci <-  pretty_inline_ci(df$ci, note = note, replace_bracket = replace_bracket)
   }
 
 
