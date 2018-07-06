@@ -2,7 +2,7 @@ title: Tools for producing publication ready documents
 url: https://samabbott.co.uk/prettypublisher/
 template:
   params:
-    bootswatch: flatly
+    bootswatch: lumen
 
 navbar:
   type: inverse

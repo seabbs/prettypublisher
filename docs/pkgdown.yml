@@ -1,6 +1,6 @@
 pandoc: 1.19.2.1
-pkgdown: 0.1.0.9000
-pkgdown_sha: d6ebaea156244a88bee4f14b4e8bcfb9e36f7727
+pkgdown: 1.0.0
+pkgdown_sha: d43ca38c74827d1d6babc3a80d48cd3a8e8fad8c
 articles:
   my-vignette: my-vignette.html
 urls:
